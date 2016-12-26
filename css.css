@@ -1,0 +1,327 @@
+body {
+	font-family:Calibri, Candara, Segoe, Optima, sans-sarif;
+	font-size:11pt;
+}
+div {
+	border: 0.5px dashed grey;
+}
+
+.page {
+	width:800px;
+	margin:auto;
+	padding:0px;
+	margin-top:-10px;
+}
+.banner{
+	height:100px;
+}
+.nav{
+	Text-align:center;
+}
+.navbutton{
+	display:inline-block;
+	width: 120px;
+	margin:2px;
+	padding:3px;
+	font-size:14pt;
+	font-weight:bold;
+	
+}
+.main{
+	min-height:700px;
+	overflow:auto;
+}
+.footer{
+	height:100px;
+}
+
+/* Buttons */
+.efbutton{
+	width: 30%;
+	float:left;
+	text-align:center;
+	padding:5px;
+	margin:5px;
+
+}
+/* Login */
+
+.login {
+	margin:auto;
+	margin:40px;
+	text-align:center;
+}
+#loginform{
+	margin:30px;
+	padding:20px;
+	width:220px;
+}
+#loginform>input{
+	display:block;
+	margin:5px;
+	padding:5px;
+	width:200px;
+	border:0.5px solid grey;
+	border-radius:2px;
+}
+.loginsubmit{
+	width:100px !important;
+	float:right;
+}
+.error {
+	width:220px;
+	margin:50px;
+}
+
+/* Entry */
+
+.entryform{
+	width: 350px;
+}
+.entryforminput>div{
+	width:150px;
+	float: left;
+	margin:2.5px;
+	padding:2.5px;
+}
+.entryforminput>select{
+	float:right;
+	width:110px;
+	height:25px;
+	padding:5px;
+	margin:2.5px;
+	border:0.5px solid grey;
+	border-radius:2px;
+
+}
+.entryforminput>input{
+	width:100px;
+	padding:5px;
+	margin:2.5px;
+	border: 0.5px solid grey;
+	float:right;
+	border-radius:2px;
+	text-align:right;
+}
+.entryforminput{
+	height:30px;
+	margin:5px 10px 5px 10px;
+	padding:5px 10px 5px 10px;
+}
+.efsubmit{
+	text-align:center !important;
+	float:right;
+	width:111px !important;
+}
+
+/* Review */
+
+.review{
+	width:350px;
+	height:auto;
+}
+.reviewoutput{
+	height:30px;
+	margin:5px 10px 5px 10px;
+	padding:5px 10px 5px 10px;
+
+}
+.reviewoutput>div{
+	width:150px;
+	float:left;
+	margin:2.5px;
+	padding:2.5px;
+	height:auto;
+}
+.reviewoutput>.item{
+	width:100px;
+	text-align:right;
+	padding:5px;
+	margin:2.5px;
+	border: 0.25px solid grey;
+	font-style:italic;
+	float:right;
+	border-radius:2px;
+}
+
+.reviewdo{
+	padding:10px;
+	margin:10px;
+	width:315px;
+}
+
+#submitdata>input{
+	padding:5px;
+	margin:2.5px;
+	border: 0.5px solid grey;
+	border-radius:2px;
+	width:100px;
+	float:right;
+}
+
+#backentry>input{
+	padding:5px;
+	margin:2.5px;
+	border: 0.5px solid grey;
+	border-radius:2px;
+	width:100px;
+	float:right;
+}
+#cancelsubmit>input{
+	padding:5px;
+	margin:2.5px;
+	border: 0.5px solid grey;
+	border-radius:2px;
+	width:100px;
+}
+
+/* Account */
+
+.accountinfo{
+	width:400px;
+	padding:10px;
+	margin:10px;
+}
+.accountinfo>div{
+	width:150px;
+	display:inline-block;
+}
+
+.accountpasswordchange{
+	width:400px;
+	padding:10px;
+	margin:10px;
+}
+.accountpasswordchangeform>div{
+	width:170px;
+	display:inline-block;
+	vertical-align:top;
+}
+.accountpasswordchangeform>div>input{
+	margin:5px;
+	padding:5px;
+	width:150px;
+	border:0.5px solid grey;
+	border-radius:2px;
+}
+.accountpasswordchangeform>div>span{
+	text-align:left;
+	display:inline-block;
+	margin-top:4px;
+	margin-bottom:4px;
+	padding-top:4px;
+	padding-bottom:4px;
+}
+.accountpasswordchangeupdate{
+	width:50px !important;
+}
+.accountpasswordstrength{
+	margin:5px;
+	padding:5px;
+	width: 340px;
+}
+
+/* User Managment */
+.usermanagment{
+	margin:5px;
+	padding:5px;
+}
+.usermanagmentlabels{
+	overflow:auto;
+}
+.usermanagmentlabels>div{
+	float:left;
+	width:150px;
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+}
+.userform>input{
+	width:150px;
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+	border: solid grey .5px;
+	border-radius: 2px;
+}
+.userform>select{
+	width:100px;
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+	border: solid grey .5px;
+	border-radius: 2px;
+
+}
+.labelselect{
+	width:88px !important;
+}
+.ulbutton{
+	width:auto !important;
+}
+.labellevel{
+	width:50px !important;
+}
+.inputlevel{
+	width:50px !important;
+}
+/* Location Managment */
+.locationmanagment{
+	margin:5px;
+	padding:5px;
+}
+.locationmanagmentlabels{
+	overflow:auto;
+}
+.locationmanagmentlabels>div{
+	float:left;
+	width:150px;
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+
+}
+.locationform>input{
+	width:150px;
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+	border: solid grey .5px;
+	border-radius: 2px;
+}
+
+
+/* Group Managment */
+.groupmanagment{
+	margin:5px;
+	padding:5px;
+}
+.groupmanagmentlabels{
+	overflow:auto;
+}
+.groupmanagmentlabels>div{
+	float:left;
+	width:90px;
+	padding-left:4px;
+	padding-right:4px;
+	margin:5px;
+
+}
+.groupform>input{
+	padding-left:5px;
+	padding-right:5px;
+	margin:5px;
+	border: solid grey .5px;
+	border-radius: 2px;
+}
+.groupcheck{
+	margin-left:50px !important;
+	margin-right:50px !important;
+}
+.grouptext{
+	width: 150px !important;
+
+}
+.labelrole{
+	width:150px !important;
+}
