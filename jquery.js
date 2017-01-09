@@ -110,6 +110,26 @@ $(document).on("keypress","input",function(e) {
 	}
 });
 
+//Display 
+$(document).on("submit","#chartform",function(e) {
+	var url = "/data.php";	
+	try{
+	var chart = FusionCharts('Revenue Chart');
+	chart.dispose();
+	}catch(e){
+
+	}
+	var submitData = $("#chartform").serialize()
+	$.ajax({
+		type:"POST",
+		url: url,
+		data: submitData,
+	}).done(function(data){
+		$("#chart-1").html(data);
+	});
+	e.preventDefault();
+
+});
 
 //Admin Function
 $(document).on("submit","#userform",function(e) {
