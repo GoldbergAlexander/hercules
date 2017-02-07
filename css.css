@@ -350,6 +350,7 @@ div {
 }
 .chartform>div>select{
 	height:20px;
+	width: 100px;
 	padding-left:5px;
 	padding-right:5px;
 	margin:5px;

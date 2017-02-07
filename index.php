@@ -1,14 +1,14 @@
 <?php
-require_once 'dbconnect.php';
+require_once '/var/www/html/database/dbconnect.php';
 
 echo "<!DOCTYPE html>";
 
 echo "<html>";
 echo "<link rel='stylesheet' href='css.css'>";
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
-echo "<script type='text/javascript' src='fc/js/fusioncharts.js'></script>";
-echo "<script type='text/javascript' src='fc/js/themes/fusioncharts.theme.ocean.js'></script>";
-echo "<script src='jquery.js'></script>";
+echo "<script type='text/javascript' src='/fc/js/fusioncharts.js'></script>";
+echo "<script type='text/javascript' src='/fc/js/themes/fusioncharts.theme.ocean.js'></script>";
+echo "<script src='/jquery.js'></script>";
 echo "<head>";
 echo "</head>";
 

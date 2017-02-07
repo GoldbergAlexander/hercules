@@ -9,43 +9,43 @@ $(document).ajaxSuccess(function(event, jqxhr,settings){
 });
 
 $(document).on('click','#home', function(){
-	$("#main").load("home.php");
+	$("#main").load("/home/home.php");
 });
 $(document).on('click','#entry',function(){
-	$("#main").load("entry.php");
+	$("#main").load("/entry/entry.php");
 });
 $(document).on("click","#display",function(){
-	$("#main").load("display.php");
+	$("#main").load("/display/display.php");
 });
 $(document).on("click","#login", function(){
-	$("#main").load("login.php");
+	$("#main").load("/login/login.php");
 });
 $(document).on("click","#register",function(){
 	$("#main").load("register.php");
 });
 
 $(document).on("click","#managment",function(){
-	$("#main").load("managment.php");
+	$("#main").load("/management/managment.php");
 });	
 	
 $(document).on("click","#logout",function(){
-	$.post("logout.php",function(data){
+	$.post("/login/logout.php",function(data){
 		$("#nav").load("nav.php");
 		$("#main").html(data);
 	});
 });
 $(document).on("click","#account",function(){
-	$("#main").load("account.php");
+	$("#main").load("/account/account.php");
 });
 $(document).on("submit","#loginform",function(e) {
-	var url = "/login_internal.php";
+	var url = "/login/login_internal.php";
 	$.ajax({
 		type:"POST",
 		url:url,
 		data:$("#loginform").serialize(),
 		}).done(function(data){
 			if(data == "valid"){
-					$("#main").load("home.php");
+					$("#main").load("/home/home.php");
 					$("#nav").load("nav.php");
 				}else{
 					$(".error").html(data);
@@ -55,7 +55,7 @@ $(document).on("submit","#loginform",function(e) {
 		e.preventDefault();
 });
 $(document).on("submit","#accountpasswordchangeform",function(e) {
-	var url = "/passwordchange_internal.php";
+	var url = "/account/passwordchange_internal.php";
 	$.ajax({
 		type: "POST",
 		url: url,
@@ -68,36 +68,34 @@ $(document).on("submit","#accountpasswordchangeform",function(e) {
 });
 
 $(document).on("submit","#entryform",function(e) {
-	var url = "/entrystore.php";	
+	var url = "/entry/entrystore.php";
 	$.ajax({
 		type:"POST",
 		url: url,
 		data:$("#entryform").serialize(),
-		
-
 	}).done(function(data){
-		$("#main").load("/entryreview.php");
+		$("#main").load("/entry/entryreview.php");
 	});
 	e.preventDefault();
 });
 
 $(document).on("submit","#submitdata",function(e) {
-	$("#main").load("/dailyrevenueentry.php");
+	$("#main").load("/entry/dailyrevenueentry.php");
 	e.preventDefault();
 });
 
 $(document).on("submit","#backentry",function(e) {
-	$("#main").load("/entry.php");
+	$("#main").load("/entry/entry.php");
 	e.preventDefault();
 });
 
 $(document).on("submit","#cancelsubmit",function(e) {
-	var url = "/cancel.php";	
+	var url = "/entry/cancel.php";
 	$.ajax({
 		type:"POST",
 		url: url,
 	}).done(function(data){
-		$("#main").load("/entry.php");
+		$("#main").load("/entry/entry.php");
 	});
 	e.preventDefault();
 
@@ -112,7 +110,7 @@ $(document).on("keypress","input",function(e) {
 
 //Display 
 $(document).on("submit","#chartform",function(e) {
-	var url = "/data.php";	
+	var url = "/display/data.php";
 	try{
 	var chart = FusionCharts('Revenue Chart');
 	chart.dispose();
@@ -134,7 +132,7 @@ $(document).on("submit","#chartform",function(e) {
 //Admin Function
 $(document).on("submit","#userform",function(e) {
 	var form = $(this).closest("form");
-	var url = "/usercontroler.php";	
+	var url = "/management/user/usercontroler.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	//if password needs to be generated
 	var pass;
@@ -150,25 +148,25 @@ $(document).on("submit","#userform",function(e) {
 		data:dat,
 
 	}).done(function(data){	
-		$("#main").load("/managment.php",function(d){
+		$("#main").load("/management/managment.php",function(d){
 			$(".password").html(data);
-		});	
+		});
 	});
 	e.preventDefault();
 });
 
 $(document).on("submit","#locationform",function(e) {
 	var form = $(this).closest("form");	
-	var url = "/locationcontroler.php";	
+	var url = "/management/location/locationcontroler.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	var dat = $(form).serialize();
-	dat += "&submit=" + btn.attr("name");	
+	dat += "&submit=" + btn.attr("name");
 	$.ajax({
 		type:"POST",
 		url: url,
 		data:dat,
 	}).done(function(data){	
-		$("#main").load("/managment.php",function(d){
+		$("#main").load("/management/managment.php",function(d){
 			$(".password").html(data);
 		});	
 	});
@@ -177,18 +175,18 @@ $(document).on("submit","#locationform",function(e) {
 
 $(document).on("submit","#groupform",function(e) {
 	var form = $(this).closest("form");	
-	var url = "/groupcontroler.php";	
+	var url = "/management/group/groupcontroler.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	var dat = $(form).serialize();
-	dat += "&submit=" + btn.attr("name");	
+	dat += "&submit=" + btn.attr("name");
 	$.ajax({
 		type:"POST",
 		url: url,
 		data:dat,
 	}).done(function(data){	
-		$("#main").load("/managment.php",function(d){
+		$("#main").load("/management/managment.php",function(d){
 			$(".password").html(data);
-		});	
+		});
 	});
 	e.preventDefault();
 });

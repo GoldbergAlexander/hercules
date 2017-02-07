@@ -1,5 +1,5 @@
 <?php
-require_once 'dbconnect.php';
+require_once '/var/www/html/database/dbconnect.php';
 
 //Display Pages
 
