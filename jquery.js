@@ -55,7 +55,7 @@ $(document).on("submit","#loginform",function(e) {
 		e.preventDefault();
 });
 $(document).on("submit","#accountpasswordchangeform",function(e) {
-	var url = "/account/passwordchange_internal.php";
+	var url = "/account/changePassword.php";
 	$.ajax({
 		type: "POST",
 		url: url,
@@ -68,19 +68,19 @@ $(document).on("submit","#accountpasswordchangeform",function(e) {
 });
 
 $(document).on("submit","#entryform",function(e) {
-	var url = "/entry/entrystore.php";
+	var url = "/entry/entryStore.php";
 	$.ajax({
 		type:"POST",
 		url: url,
 		data:$("#entryform").serialize(),
 	}).done(function(data){
-		$("#main").load("/entry/entryreview.php");
+		$("#main").load("/entry/entryReview.php");
 	});
 	e.preventDefault();
 });
 
 $(document).on("submit","#submitdata",function(e) {
-	$("#main").load("/entry/dailyrevenueentry.php");
+	$("#main").load("/entry/entryInsert.php");
 	e.preventDefault();
 });
 
@@ -90,7 +90,7 @@ $(document).on("submit","#backentry",function(e) {
 });
 
 $(document).on("submit","#cancelsubmit",function(e) {
-	var url = "/entry/cancel.php";
+	var url = "/entry/entryClear.php";
 	$.ajax({
 		type:"POST",
 		url: url,

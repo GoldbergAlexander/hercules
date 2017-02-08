@@ -1,6 +1,7 @@
 <?php
 require_once '/var/www/html/database/dbconnect.php';
 require_once '/var/www/html/security/security.php';
+require_once '/var/www/html/management/managementLibrary.php';
 secure();
 
 /*outline*/
@@ -19,33 +20,12 @@ if(!$stmt->execute()){
 if(!$stmt->bind_result($idLocation,$Name,$Address)){
 	echo "Bind Result Failed: (" .$stmt->errno . ") " . $stmt->error;
 }
-
-
 echo "<div class='locationmanagment' id='locationmanagment'>";
-	echo "<div class='locationmanagmentlabels' id='locationmanagmentlabels'>";
-		echo "<div class='label' id='labe'>Name</div>";
-		echo "<div class='label' id='labe'>Address</div>";
-	echo "</div>";//locationmanagmentlabels
-
+echo locationLabels();
 while($stmt->fetch()){
-	echo "<div class='location' id='location'>";
-		echo "<form class='locationform' id='locationform'>";
-			echo "<input type='hidden' name='idlocation' value='$idLocation'>";
-			echo "<input type='text' name='name' value='$Name'>";
-			echo "<input type='address' name='address' value='$Address'>";
-			echo "<input class='ulbutton' type='submit' value='Remove' name='remove'>";
-			echo "<input class='ulbutton' type='submit' value='Update' name='update'>";
-		echo "</form>"; //userform
-	echo "</div>";
-
+   echo displayLocation($idLocation, $Name, $Address);
 }
 $stmt->close();
-echo "<div class='location' id ='location'>";
-echo "<form class='locationform' id='locationform'>";
-echo "<input type='text' name='name'>";
-echo "<input type='address' name='address'>";
-echo "<input class='ulbutton' type='submit' value='Create' name='create'>";
-echo "</form>"; //userform
-echo "</div>";
+echo displayCreateLocation();
 
 echo "</div>";//locationmanagmebt

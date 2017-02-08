@@ -30,3 +30,26 @@ if(!$stmt->execute()){
 }
 $stmt->close();
 ?>
+
+//test
+/*
+$var = 1;
+for($x = 0; $x <365*5; $x++){
+$location 	= "Not the West Side";
+$locationid	= 2;
+//$department 	= $array['department'];
+//$departmentid	= $array['departmentid'];
+$date 		= date("Y-m-d" ,strtotime("-$x day",strtotime(time())));
+$transcount	= 1;
+$cashcount 	= 1;
+$checkcount 	= 1;
+$payout 	= 1;
+$cardunit 	= 1;
+$cashtape 	= 1;
+$checktape 	= 1;
+$cardtape 	= 1;
+$taxtape 	= 1;
+$salesvoid 	= 1;
+$taxvoid 	= 1;
+$memo		= 1;
+//*/

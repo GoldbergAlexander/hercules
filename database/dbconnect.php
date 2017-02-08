@@ -13,8 +13,8 @@ function dbconnect()
     } else {
 
     }
+
     session_start();
 }
-
 dbconnect();
 ?>

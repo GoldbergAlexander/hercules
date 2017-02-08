@@ -1,6 +1,7 @@
 <?php 
 require_once '/var/www/html/database/dbconnect.php';
 require_once '/var/www/html/security/security.php';
+require_once '/var/www/html/management/managementLibrary.php';
 secure();
 
 /* Security note
@@ -37,122 +38,71 @@ secure();
 
 // ID Checking
 
-if(!isset($_POST['submit'])){
-	die("Invalid Usage");
+
+if(!usageUser()){
+    die();
 }
 
-//Standard Var check
-if((!isset($_POST['username'])) || (strlen($_POST['username']) <= 0)){
-	die("Invalid Usage");
-}
-if((!isset($_POST['level'])) || (strlen($_POST['level']) <= 0)){
-	die("Invalid Usage");
-}
-if((!isset($_POST['group'])) || (strlen($_POST['group']) <= 0)){
-	die("Invalid Usage");
-}
-if((!isset($_POST['location'])) || (strlen($_POST['location']) <= 0)){
-	die("Invalid Usage");
-}
+switch($_POST['submit']){
 
-if($_POST['submit'] == "password"){
-	//CHeck for a password and make sure its not null
-	if(!isset($_POST['password']) || (strlen($_POST['password']) <= 0)){
-		die("Invalid Usage");
-	}
-	$iduser = htmlspecialchars($_POST['iduser']);
-	$pass = $_POST['password'];
-	echo "Setting $pass as new password.";
-	$hash = password_hash($pass, PASSWORD_DEFAULT); 
-	
-	//Prepare
-	if(!$stmt = $con->prepare("UPDATE Users SET Hash=? WHERE idUsers=?")){
-		echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
-	}	
-	//Bind
-	if(!$stmt->bind_param("si",$hash,$iduser)){
-		echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
-	//Execute
-	if(!$stmt->execute()){
-		echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
-	$stmt->close();
-	
-}
-if($_POST['submit'] == "update"){
-	$iduser = htmlspecialchars($_POST['iduser']);
-	$username = htmlspecialchars($_POST['username']);
-	$location = htmlspecialchars($_POST['location']);
-	$group = htmlspecialchars($_POST['group']);
-	$level = htmlspecialchars($_POST['level']);
-	//Prepare
-	if(!$stmt = $con->prepare("UPDATE Users SET Username=?,Level=?
-		,Users_idGroup=
-		(SELECT idGroup FROM `Group` WHERE Role=?)
-		,Users_idLocation=
-		(SELECT idLocation FROM Location WHERE Name=?) WHERE idUsers=?")){
-		echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
-	}	
-	//Bind
-	if(!$stmt->bind_param("sissi",$username,$level,$group,$location,$iduser)){
-		echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
-	//Execute
-	if(!$stmt->execute()){
-		echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
+    case "password":
+        //Check for a password and make sure its not null
+        if (!isset($_POST['password']) || (strlen($_POST['password']) <= 0)) {
+        die("Invalid Usage");
+        }
+        $iduser = htmlspecialchars($_POST['iduser']);
+        $pass = $_POST['password'];
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
 
-	$stmt->close();
-}
-if($_POST['submit'] == "remove"){
-	$iduser = htmlspecialchars($_POST['iduser']);
-	//Prepare
-	if(!$stmt = $con->prepare("DELETE FROM Users WHERE idUsers=?")){
-		echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
-	}	
-	//Bind
-	if(!$stmt->bind_param("i",$iduser)){
-		echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
-	//Execute
-	if(!$stmt->execute()){
-		echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
+        if (!updatePassword($con, $hash, $iduser)) {
+            echo "Error Updating Password";
+        } else {
+            echo "Setting $pass as new password.";
+        }
+        break;
 
-	$stmt->close();
-}
-if($_POST['submit'] == "create"){
-	//make sure an ID does not exist in the submission 
-	if(isset($_POST['iduser'])){
-		die("Invalid Usage");
-	}
-	
-	$username = htmlspecialchars($_POST['username']);
-	$location = htmlspecialchars($_POST['location']);
-	$group = htmlspecialchars($_POST['group']);
-	$level = htmlspecialchars($_POST['level']);
-	$pass = $_POST['password'];
-	$hash = password_hash($pass, PASSWORD_DEFAULT); 
-	//Prepare
-	if(!$stmt = $con->prepare("INSERT INTO Users 
-		(Username,Level,Hash,Users_idGroup,Users_idLocation) 
-		VALUES (?,?,?,
-		(SELECT idGroup FROM `Group` WHERE Role=?),
-		(SELECT idLocation FROM Location WHERE Name=?))")){
-		echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
-	}	
-	//Bind
-	if(!$stmt->bind_param("sisss",$username,$level,$hash,$group,$location)){
-		echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
-	//Execute
-	if(!$stmt->execute()){
-		echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
-	}
+    case "update":
+        $iduser = htmlspecialchars($_POST['iduser']);
+        $username = htmlspecialchars($_POST['username']);
+        $location = htmlspecialchars($_POST['location']);
+        $group = htmlspecialchars($_POST['group']);
+        $level = htmlspecialchars($_POST['level']);
+        if (!updateUser($con, $username, $level, $group, $location, $iduser)) {
+            echo "Error Updating User";
+        } else {
+            echo "User Update Saved";
+        }
+        break;
 
-	$stmt->close();
+    case "remove":
+        $iduser = htmlspecialchars($_POST['iduser']);
+        if(!removeUser($con, $iduser)){
+            echo "Error Removing User";
+        } else {
+            echo "User Removed";
+        }
+        break;
 
-	echo "User $username Created with Password $pass";
+    case "create":
+        //make sure an ID does not exist in the submission
+        if (isset($_POST['iduser'])) {
+            die("Invalid Usage");
+        }
+        $username = htmlspecialchars($_POST['username']);
+        $location = htmlspecialchars($_POST['location']);
+        $group = htmlspecialchars($_POST['group']);
+        $level = htmlspecialchars($_POST['level']);
+        $pass = $_POST['password'];
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        if (!insertUser($con, $username, $level, $hash, $group, $location)) {
+            echo "Error Inserting User";
+        } else {
+            echo "User $username Created with Password $pass";
+        }
+        break;
+
+    default:
+        die("Invalid Usage");
+        break;
 }
 
