@@ -818,7 +818,7 @@
 
 				_start();
 
-				return;
+
 			});
 
 		return this;
@@ -902,7 +902,7 @@
 			_start();
 		}
 
-		return;
+
 	};
 
 	$.fancybox.cancel = function() {

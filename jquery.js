@@ -38,7 +38,7 @@ $(document).on("click","#account",function(){
 	$("#main").load("/account/account.php");
 });
 $(document).on("submit","#loginform",function(e) {
-	var url = "/login/login_internal.php";
+	var url = "/login/loginController.php";
 	$.ajax({
 		type:"POST",
 		url:url,
@@ -132,7 +132,7 @@ $(document).on("submit","#chartform",function(e) {
 //Admin Function
 $(document).on("submit","#userform",function(e) {
 	var form = $(this).closest("form");
-	var url = "/management/user/usercontroler.php";
+	var url = "/management/user/userController.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	//if password needs to be generated
 	var pass;
@@ -157,7 +157,7 @@ $(document).on("submit","#userform",function(e) {
 
 $(document).on("submit","#locationform",function(e) {
 	var form = $(this).closest("form");	
-	var url = "/management/location/locationcontroler.php";
+	var url = "/management/location/locationController.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	var dat = $(form).serialize();
 	dat += "&submit=" + btn.attr("name");
@@ -175,7 +175,7 @@ $(document).on("submit","#locationform",function(e) {
 
 $(document).on("submit","#groupform",function(e) {
 	var form = $(this).closest("form");	
-	var url = "/management/group/groupcontroler.php";
+	var url = "/management/group/groupController.php";
 	var btn = $(this).find("input[type=submit]:focus");
 	var dat = $(form).serialize();
 	dat += "&submit=" + btn.attr("name");

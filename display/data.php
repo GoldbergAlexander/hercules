@@ -1,8 +1,7 @@
 <?php 
 require_once '/var/www/html/database/dbconnect.php';
 require_once '/var/www/html/security/security.php';
-include '/var/www/html/display/dataDisplay.php';
-include '/var/www/html/display/dataFetch.php';
+require_once "/var/www/html/display/displayLibrary.php";
 secure();
 
 if(isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['detail'])){

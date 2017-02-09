@@ -339,8 +339,25 @@ function displayCreateUser($groups, $locations)
     return $string;
 }
 
+
 /**
- * Location Controler Functions
+ * @param $con
+ */
+function userManagement($con)
+{
+    $string = "";
+    $string .=  "<div class='usermanagment' id='usermanagment'>";
+    $locations = getLocations($con);
+    $groups = getGroups($con);
+    $string .=  getUsers($con, $groups, $locations);
+    $string .=  displayCreateUser($groups, $locations);
+    $string .=  "</div>";
+    return $string;
+}
+
+
+/**
+ * Location Controller Functions
  */
 
 function locationUsage()
@@ -505,3 +522,298 @@ function displayCreateLocation()
     $string .=  "</div>";
     return $string;
 }
+
+/**
+ * @param $con
+ * @param $idLocation
+ * @param $Name
+ * @param $Address
+ */
+function locationManagement($con)
+{
+    $idLocation = "";
+    $Name = "";
+    $Address = "";
+    $string = "";
+//Prepare
+    if (!$stmt = $con->prepare("SELECT idLocation,Name,Address FROM Location ORDER BY Name ASC")) {
+        $string .= "Prepare Failed: (" . $con->errno . ") " . $con->error;
+    }
+//Execute
+    if (!$stmt->execute()) {
+        $string .= "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+//Bind
+    if (!$stmt->bind_result($idLocation, $Name, $Address)) {
+        $string .= "Bind Result Failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+    $string .= "<div class='locationmanagment' id='locationmanagment'>";
+    $string .= locationLabels();
+    while ($stmt->fetch()) {
+        $string .= displayLocation($idLocation, $Name, $Address);
+    }
+    $stmt->close();
+    $string .= displayCreateLocation();
+
+    $string .= "</div>";
+    return $string;
+}
+
+/**
+ *  Group Controller Functions
+ */
+
+
+function groupUsage()
+{
+    if (!isset($_POST['submit'])) {
+        return false;
+
+    }
+//Standard Var check
+    if ((!isset($_POST['role'])) || (strlen($_POST['role']) <= 0)) {
+        return false;
+    }
+    return true;
+}
+
+
+/**
+ * @param $con
+ * @return array
+ */
+function updateGroup($con)
+{
+    if ((!isset($_POST['idgroup'])) || (strlen($_POST['idgroup']) <= 0)) {
+        echo ("Invalid Usage");
+        return false;
+    }
+    $idgroup = htmlspecialchars($_POST['idgroup']);
+    $role = htmlspecialchars($_POST['role']);
+    $mgmt = 0;
+    $read = 0;
+    $write = 0;
+
+    if (isset($_POST['managment'])) {
+        $mgmt = 1;
+    }
+    if (isset($_POST['read'])) {
+        $read = 1;
+    }
+    if (isset($_POST['write'])) {
+        $write = 1;
+    }
+
+    //Prepare
+    if (!$stmt = $con->prepare("UPDATE `Group` 
+				SET `Role`=?,`Managment`=?,`Read`=?,`Write`=? 
+				WHERE idGroup=?")
+    ) {
+        echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
+        return false;
+    }
+    //Bind
+    if (!$stmt->bind_param("siiii", $role, $mgmt, $read, $write, $idgroup)) {
+        echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+    //Execute
+    if (!$stmt->execute()) {
+        echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+
+    $stmt->close();
+    return true;
+}
+
+/**
+ * @param $con
+ * @return bool
+ */
+function removeGroup($con)
+{
+    if ((!isset($_POST['idgroup'])) || (strlen($_POST['idgroup']) <= 0)) {
+        echo("Invalid Usage");
+        return false;
+    }
+    $idgroup = htmlspecialchars($_POST['idgroup']);
+
+    //Prepare
+    if (!$stmt = $con->prepare("DELETE FROM `Group` 
+                                WHERE idGroup=?")) {
+        echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
+        return false;
+    }
+    //Bind
+    if (!$stmt->bind_param("i", $idgroup)) {
+        echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+    //Execute
+    if (!$stmt->execute()) {
+        echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+
+    $stmt->close();
+    return true;
+}
+
+/**
+ * @param $con
+ */
+function createGroup($con)
+{
+    if (isset($_POST['idgroup'])) {
+        echo("Invalid Usage");
+        return false;
+    }
+    $role = htmlspecialchars($_POST['role']);
+    $mgmt = 0;
+    $read = 0;
+    $write = 0;
+
+    if (isset($_POST['managment'])) {
+        $mgmt = 1;
+    }
+    if (isset($_POST['read'])) {
+        $read = 1;
+    }
+    if (isset($_POST['write'])) {
+        $write = 1;
+    }
+
+    //Prepare
+    if (!$stmt = $con->prepare("INSERT INTO   `Group` 
+                                              (`Role`,
+                                              `Managment`,
+                                              `Read`,
+                                              `Write`)
+				                VALUES(?,?,?,?)")
+    ) {
+        echo "Prepare Failed: (" . $con->errno . ") " . $con->error;
+        return false;
+    }
+    //Bind
+    if (!$stmt->bind_param("siii", $role, $mgmt, $read, $write)) {
+        echo "Bind Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+    //Execute
+    if (!$stmt->execute()) {
+        echo "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
+        return false;
+    }
+
+    $stmt->close();
+    return true;
+}
+
+/**
+ * Group Management Functions
+ */
+
+/**
+ * @param $idGroup
+ * @param $role
+ * @param $managment
+ * @param $read
+ * @param $write
+ */
+function displayGroup($idGroup, $role, $managment, $read, $write)
+{
+    $string = "";
+    $string .= "<div class='group' id='group'>";
+    $string .= "<form class='groupform' id='groupform'>";
+    $string .= "<input type='hidden' name='idgroup' value='$idGroup'>";
+    $string .= "<input class='grouptext' type='text' name='role' value='$role'>";
+    $string .= "<input class='groupcheck' type='checkbox' name='managment' value='$managment'";
+    if ($managment == 1) {
+        $string .= "checked";
+    }
+    $string .= ">";
+    $string .= "<input  class='groupcheck' type='checkbox' name='read' value='$read'";
+    if ($read == 1) {
+        $string .= "checked";
+    }
+    $string .= ">";
+    $string .= "<input  class='groupcheck' type='checkbox' name='write' value='$write'";
+    if ($write == 1) {
+        $string .= "checked";
+    }
+    $string .= ">";
+    $string .= "<input class='ulbutton' type='submit' value='Remove' name='remove'>";
+    $string .= "<input class='ulbutton' type='submit' value='Update' name='update'>";
+    $string .= "</form>"; //groupform
+    $string .= "</div>";
+    return $string;
+}
+
+function groupLabels()
+{
+    $string = "";
+    $string .= "<div class='groupmanagmentlabels' id='groupmanagmentlabels'>";
+    $string .= "<div class='labelrole' id='labe'>Role</div>";
+    $string .= "<div class='label' id='labe'>Management</div>";
+    $string .= "<div class='label' id='labe'>Read</div>";
+    $string .= "<div class='label' id='labe'>Write</div>";
+    $string .= "</div>";//locationmanagmentlabels
+    return $string;
+}
+
+function displayCreateGroup()
+{
+    $string = "";
+    $string .= "<div class='group' id ='group'>";
+    $string .= "<form class='groupform' id='groupform'>";
+    $string .= "<input type='text' class='grouptext' name='role'>";
+    $string .= "<input  class='groupcheck' type='checkbox' name='managment'>";
+    $string .= "<input  class='groupcheck' type='checkbox' name='read'>";
+    $string .= "<input  class='groupcheck' type='checkbox' name='write'>";
+    $string .= "<input class='ulbutton' type='submit' value='Create' name='create'>";
+    $string .= "</form>"; //groupform
+    $string .= "</div>";
+    return $string;
+}
+
+/**
+ * @param $con
+ */
+function groupManagement($con)
+{
+    $string = "";
+    $idGroup = "";
+    $managment = "";
+    $role = "";
+    $write = "";
+    $read = "";
+//Prepare
+    if (!$stmt = $con->prepare("SELECT idGroup, Role, Managment, `Write`, `Read` FROM `Group`")) {
+        $string .=  "Prepare Failed: (" . $con->errno . ") " . $con->error;
+    }
+//Execute
+    if (!$stmt->execute()) {
+        $string .=  "Execute Failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+//Bind
+    if (!$stmt->bind_result($idGroup, $role, $managment, $write, $read)) {
+        $string .=  "Bind Result Failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+
+    $string .=  "<div class='groupmanagment' id='groupmanagment'>";
+
+    $string .=  groupLabels();
+    while ($stmt->fetch()) {
+        $string .=  displayGroup($idGroup, $role, $managment, $read, $write);
+
+    }
+    $stmt->close();
+
+    $string .=  displayCreateGroup();
+
+    $string .=  "</div>";
+    return $string;
+}
+

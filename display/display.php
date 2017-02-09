@@ -33,8 +33,6 @@ echo "<div class='location' id='location'>";
 	if(!$stmt->bind_result($Name)){
 		echo "Bind Result Failed: (" .$stmt->errno . ") " . $stmt->error;
 	}
-
-
 	while($stmt->fetch()){
 		echo "<option value='$Name'>$Name</option>";
 	}	
