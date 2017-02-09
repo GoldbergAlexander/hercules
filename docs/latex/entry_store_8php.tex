@@ -1,0 +1,192 @@
+\hypertarget{entry_store_8php}{}\section{entry/entry\+Store.php File Reference}
+\label{entry_store_8php}\index{entry/entry\+Store.\+php@{entry/entry\+Store.\+php}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{entry_store_8php_ac319193077976bb217112e5a7b7b8022}{\$location} = \hyperlink{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}{filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}location\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_af5cc7499478fa9b6d7f9670f6a8521a0}{\$department} = \hyperlink{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}{filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}department\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a481c918f8d853749e00b5942cabf599a}{\$date} = \hyperlink{entry_library_8php_a2710911dba21b4ef81d746296ac33b1e}{filter\+Date}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}date\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a63fbfb73628737f907460ff60b5dca1f}{\$transcount} = \hyperlink{entry_library_8php_af8b4d6af446ee1a1da82accb07140c6f}{filter\+Int}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}transcount\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a175ae5360f80b9afcc39b1491f4ff56f}{\$cashcount} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cashcount\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_aff7cc4d027f444fb1e9c4356364a641a}{\$checkcount} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}checkcount\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_ae344e604ec98f96f5ad2075e96f20095}{\$payout} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}payout\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a18ec05411c100d20ef6c1c9c96c742f0}{\$cardunit} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cardunit\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a27479da3e11521374d7ff42ea3ce7c4d}{\$cashtape} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cashtape\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a21cc9b3edb79bb708eed7e39a8b9f0f3}{\$checktape} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}checktape\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a2ba025244de3aca4d8d092158ce050d5}{\$cardtape} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cardtape\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a848133982d92206673becfebaf364f83}{\$taxtape} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}taxtape\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a1409aee267ba462f0eb32c242b06634d}{\$salesvoid} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}salesvoid\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a60120472d8e892fe568fc61eaf53393e}{\$taxvoid} = \hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}taxvoid\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_a4ed302f6d17ec82f553fbd029e52ab7e}{\$memo} = \hyperlink{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}{filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}memo\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{entry_store_8php_adfb2208f2d8e7ce86dc67d9cd1fa3da3}{\$locationid} = \hyperlink{entry_library_8php_a82883067e7ce3af084a689781acadc10}{location\+To\+Id}(\$con, \$location)
+\item 
+\hyperlink{entry_store_8php_a16d059f286ed0835a8988d28eef36a90}{\$departmentid} = \hyperlink{entry_library_8php_a628b0434043d9c6c694cb3f019dde312}{department\+To\+Id}(\$con, \$department)
+\item 
+\hyperlink{entry_store_8php_a0567a3646bedddfcca8dc8c2e228139c}{\$submitarray}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$cardtape@{\$cardtape}}
+\index{\$cardtape@{\$cardtape}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$cardtape}{$cardtape}}]{\setlength{\rightskip}{0pt plus 5cm}\$cardtape = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cardtape\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a2ba025244de3aca4d8d092158ce050d5}{}\label{entry_store_8php_a2ba025244de3aca4d8d092158ce050d5}
+
+
+Definition at line 17 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$cardunit@{\$cardunit}}
+\index{\$cardunit@{\$cardunit}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$cardunit}{$cardunit}}]{\setlength{\rightskip}{0pt plus 5cm}\$cardunit = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cardunit\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a18ec05411c100d20ef6c1c9c96c742f0}{}\label{entry_store_8php_a18ec05411c100d20ef6c1c9c96c742f0}
+
+
+Definition at line 14 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$cashcount@{\$cashcount}}
+\index{\$cashcount@{\$cashcount}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$cashcount}{$cashcount}}]{\setlength{\rightskip}{0pt plus 5cm}\$cashcount = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cashcount\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a175ae5360f80b9afcc39b1491f4ff56f}{}\label{entry_store_8php_a175ae5360f80b9afcc39b1491f4ff56f}
+
+
+Definition at line 11 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$cashtape@{\$cashtape}}
+\index{\$cashtape@{\$cashtape}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$cashtape}{$cashtape}}]{\setlength{\rightskip}{0pt plus 5cm}\$cashtape = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}cashtape\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a27479da3e11521374d7ff42ea3ce7c4d}{}\label{entry_store_8php_a27479da3e11521374d7ff42ea3ce7c4d}
+
+
+Definition at line 15 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$checkcount@{\$checkcount}}
+\index{\$checkcount@{\$checkcount}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$checkcount}{$checkcount}}]{\setlength{\rightskip}{0pt plus 5cm}\$checkcount = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}checkcount\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_aff7cc4d027f444fb1e9c4356364a641a}{}\label{entry_store_8php_aff7cc4d027f444fb1e9c4356364a641a}
+
+
+Definition at line 12 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$checktape@{\$checktape}}
+\index{\$checktape@{\$checktape}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$checktape}{$checktape}}]{\setlength{\rightskip}{0pt plus 5cm}\$checktape = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}checktape\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a21cc9b3edb79bb708eed7e39a8b9f0f3}{}\label{entry_store_8php_a21cc9b3edb79bb708eed7e39a8b9f0f3}
+
+
+Definition at line 16 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$date@{\$date}}
+\index{\$date@{\$date}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$date}{$date}}]{\setlength{\rightskip}{0pt plus 5cm}\$date = {\bf filter\+Date}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}date\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a481c918f8d853749e00b5942cabf599a}{}\label{entry_store_8php_a481c918f8d853749e00b5942cabf599a}
+
+
+Definition at line 9 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$department@{\$department}}
+\index{\$department@{\$department}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$department}{$department}}]{\setlength{\rightskip}{0pt plus 5cm}\$department = {\bf filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}department\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_af5cc7499478fa9b6d7f9670f6a8521a0}{}\label{entry_store_8php_af5cc7499478fa9b6d7f9670f6a8521a0}
+
+
+Definition at line 8 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$departmentid@{\$departmentid}}
+\index{\$departmentid@{\$departmentid}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$departmentid}{$departmentid}}]{\setlength{\rightskip}{0pt plus 5cm}\$departmentid = {\bf department\+To\+Id}(\$con, \$department)}\hypertarget{entry_store_8php_a16d059f286ed0835a8988d28eef36a90}{}\label{entry_store_8php_a16d059f286ed0835a8988d28eef36a90}
+
+
+Definition at line 25 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$location@{\$location}}
+\index{\$location@{\$location}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$location}{$location}}]{\setlength{\rightskip}{0pt plus 5cm}\$location = {\bf filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}location\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_ac319193077976bb217112e5a7b7b8022}{}\label{entry_store_8php_ac319193077976bb217112e5a7b7b8022}
+
+
+Definition at line 7 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$locationid@{\$locationid}}
+\index{\$locationid@{\$locationid}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$locationid}{$locationid}}]{\setlength{\rightskip}{0pt plus 5cm}\$locationid = {\bf location\+To\+Id}(\$con, \$location)}\hypertarget{entry_store_8php_adfb2208f2d8e7ce86dc67d9cd1fa3da3}{}\label{entry_store_8php_adfb2208f2d8e7ce86dc67d9cd1fa3da3}
+
+
+Definition at line 24 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$memo@{\$memo}}
+\index{\$memo@{\$memo}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$memo}{$memo}}]{\setlength{\rightskip}{0pt plus 5cm}\$memo = {\bf filter\+String}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}memo\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a4ed302f6d17ec82f553fbd029e52ab7e}{}\label{entry_store_8php_a4ed302f6d17ec82f553fbd029e52ab7e}
+
+
+Definition at line 21 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$payout@{\$payout}}
+\index{\$payout@{\$payout}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$payout}{$payout}}]{\setlength{\rightskip}{0pt plus 5cm}\$payout = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}payout\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_ae344e604ec98f96f5ad2075e96f20095}{}\label{entry_store_8php_ae344e604ec98f96f5ad2075e96f20095}
+
+
+Definition at line 13 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$salesvoid@{\$salesvoid}}
+\index{\$salesvoid@{\$salesvoid}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$salesvoid}{$salesvoid}}]{\setlength{\rightskip}{0pt plus 5cm}\$salesvoid = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}salesvoid\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a1409aee267ba462f0eb32c242b06634d}{}\label{entry_store_8php_a1409aee267ba462f0eb32c242b06634d}
+
+
+Definition at line 19 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$submitarray@{\$submitarray}}
+\index{\$submitarray@{\$submitarray}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$submitarray}{$submitarray}}]{\setlength{\rightskip}{0pt plus 5cm}\$submitarray}\hypertarget{entry_store_8php_a0567a3646bedddfcca8dc8c2e228139c}{}\label{entry_store_8php_a0567a3646bedddfcca8dc8c2e228139c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= array(
+    \textcolor{stringliteral}{"location"} => \hyperlink{entry_store_8php_ac319193077976bb217112e5a7b7b8022}{$location},
+    \textcolor{stringliteral}{"department"} => \hyperlink{entry_store_8php_af5cc7499478fa9b6d7f9670f6a8521a0}{$department},
+    \textcolor{stringliteral}{"locationid"} => \hyperlink{entry_store_8php_adfb2208f2d8e7ce86dc67d9cd1fa3da3}{$locationid},
+    \textcolor{stringliteral}{"departmentid"} => \hyperlink{entry_store_8php_a16d059f286ed0835a8988d28eef36a90}{$departmentid},
+    \textcolor{stringliteral}{"date"} => \hyperlink{entry_store_8php_a481c918f8d853749e00b5942cabf599a}{$date},
+    \textcolor{stringliteral}{"transcount"} => \hyperlink{entry_store_8php_a63fbfb73628737f907460ff60b5dca1f}{$transcount},
+    \textcolor{stringliteral}{"cashcount"} => \hyperlink{entry_store_8php_a175ae5360f80b9afcc39b1491f4ff56f}{$cashcount},
+    \textcolor{stringliteral}{"checkcount"} => \hyperlink{entry_store_8php_aff7cc4d027f444fb1e9c4356364a641a}{$checkcount},
+    \textcolor{stringliteral}{"payout"} => \hyperlink{entry_store_8php_ae344e604ec98f96f5ad2075e96f20095}{$payout},
+    \textcolor{stringliteral}{"cardunit"} => \hyperlink{entry_store_8php_a18ec05411c100d20ef6c1c9c96c742f0}{$cardunit},
+    \textcolor{stringliteral}{"cardtape"} => \hyperlink{entry_store_8php_a2ba025244de3aca4d8d092158ce050d5}{$cardtape},
+    \textcolor{stringliteral}{"cashtape"} => \hyperlink{entry_store_8php_a27479da3e11521374d7ff42ea3ce7c4d}{$cashtape},
+    \textcolor{stringliteral}{"checktape"} => \hyperlink{entry_store_8php_a21cc9b3edb79bb708eed7e39a8b9f0f3}{$checktape},
+    \textcolor{stringliteral}{"taxtape"} => \hyperlink{entry_store_8php_a848133982d92206673becfebaf364f83}{$taxtape},
+    \textcolor{stringliteral}{"salesvoid"} => \hyperlink{entry_store_8php_a1409aee267ba462f0eb32c242b06634d}{$salesvoid},
+    \textcolor{stringliteral}{"taxvoid"} => \hyperlink{entry_store_8php_a60120472d8e892fe568fc61eaf53393e}{$taxvoid},
+    \textcolor{stringliteral}{"memo"} => \hyperlink{entry_store_8php_a4ed302f6d17ec82f553fbd029e52ab7e}{$memo}
+)
+\end{DoxyCode}
+
+
+Definition at line 27 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$taxtape@{\$taxtape}}
+\index{\$taxtape@{\$taxtape}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$taxtape}{$taxtape}}]{\setlength{\rightskip}{0pt plus 5cm}\$taxtape = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}taxtape\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a848133982d92206673becfebaf364f83}{}\label{entry_store_8php_a848133982d92206673becfebaf364f83}
+
+
+Definition at line 18 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$taxvoid@{\$taxvoid}}
+\index{\$taxvoid@{\$taxvoid}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$taxvoid}{$taxvoid}}]{\setlength{\rightskip}{0pt plus 5cm}\$taxvoid = {\bf filter\+Float}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}taxvoid\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a60120472d8e892fe568fc61eaf53393e}{}\label{entry_store_8php_a60120472d8e892fe568fc61eaf53393e}
+
+
+Definition at line 20 of file entry\+Store.\+php.
+
+\index{entry\+Store.\+php@{entry\+Store.\+php}!\$transcount@{\$transcount}}
+\index{\$transcount@{\$transcount}!entry\+Store.\+php@{entry\+Store.\+php}}
+\subsubsection[{\texorpdfstring{\$transcount}{$transcount}}]{\setlength{\rightskip}{0pt plus 5cm}\$transcount = {\bf filter\+Int}(\$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}transcount\textquotesingle{}\mbox{]})}\hypertarget{entry_store_8php_a63fbfb73628737f907460ff60b5dca1f}{}\label{entry_store_8php_a63fbfb73628737f907460ff60b5dca1f}
+
+
+Definition at line 10 of file entry\+Store.\+php.
+

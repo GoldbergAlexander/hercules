@@ -1,0 +1,125 @@
+\hypertarget{login_controller_8php}{}\section{login/login\+Controller.php File Reference}
+\label{login_controller_8php}\index{login/login\+Controller.\+php@{login/login\+Controller.\+php}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{login_controller_8php_a29df9d9e6f96a4deadc10ccad7ca7b85}{\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN} = 5
+\item 
+\hyperlink{login_controller_8php_af965f1dde416adc9f91471416e63e3fc}{\$\+M\+A\+X\+\_\+\+T\+I\+ME} = 1
+\item 
+if(!\hyperlink{login_library_8php_acedd634aa4d2f9fe584e508b07d01ab5}{login\+Usage}()) \hyperlink{login_controller_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{\$username} = \$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}username\textquotesingle{}\mbox{]}
+\item 
+\hyperlink{login_controller_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{\$password} = \$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}password\textquotesingle{}\mbox{]}
+\item 
+\hyperlink{login_controller_8php_ac9fdf6f2c8fb45c1d3bb9a176802b2ad}{\$hash} = N\+U\+LL
+\item 
+\hyperlink{login_controller_8php_abd32cc82c6a3f79491987de36ad580ca}{\$level} = N\+U\+LL
+\item 
+\hyperlink{login_controller_8php_a1ea903cca285c7c0b4c9203932100309}{\$role} = N\+U\+LL
+\item 
+\hyperlink{login_controller_8php_abf6d841a145ada2e5b68168ac15e9d1b}{\$ret\+Count} = \char`\"{}\char`\"{}
+\item 
+\hyperlink{login_controller_8php_a71b0d4434a284e136badb5b9a37f38bb}{\$current\+Date} = date(\textquotesingle{}Y-\/m-\/d H\+:i\+:s\textquotesingle{})
+\item 
+\hyperlink{login_controller_8php_ac2e4b5fa63099d7c943a803ae122dd2b}{\$range} = 60 $\ast$ 60 $\ast$ \$M\+A\+X\+\_\+\+T\+I\+ME
+\item 
+\hyperlink{login_controller_8php_a14cff6ab1fd58b8e2d49e54bbcd093d0}{\$past\+Date} = date(\textquotesingle{}Y-\/m-\/d H\+:i\+:s\textquotesingle{}, strtotime(\$current\+Date) -\/ \$range)
+\item 
+if(\$ret\+Count $>$=\$M\+A\+X\+\_\+\+L\+O\+G\+IN) if(!\$stmt=\$con-\/$>$prepare(\char`\"{}S\+E\+L\+E\+CT id\+Users, Username, Hash, level, Name, Role, Managment, `Write`, `Read` F\+R\+OM Users L\+E\+FT J\+O\+IN Location ON Users\+\_\+id\+Location = id\+Location L\+E\+FT J\+O\+IN `Group` ON Users\+\_\+id\+Group = id\+Group W\+H\+E\+RE Username = ? \char`\"{})) if(!\$stmt-\/$>$bind\+\_\+param(\char`\"{}s\char`\"{}, \$username)) if(!\$stmt-\/$>$execute()) if(!\$stmt-\/$>$bind\+\_\+result(\$userid, \$username, \$hash, \$level, \$location, \$role, \$m, \$w, \$r)) \hyperlink{login_controller_8php_a67c41f5902e42a545f6ac644c135b3a7}{\$my\+User\+Id}
+\item 
+\hyperlink{login_controller_8php_a112ef069ddc0454086e3d1e6d8d55d07}{\$result} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$current\+Date@{\$current\+Date}}
+\index{\$current\+Date@{\$current\+Date}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$current\+Date}{$currentDate}}]{\setlength{\rightskip}{0pt plus 5cm}\$current\+Date = date(\textquotesingle{}Y-\/m-\/d H\+:i\+:s\textquotesingle{})}\hypertarget{login_controller_8php_a71b0d4434a284e136badb5b9a37f38bb}{}\label{login_controller_8php_a71b0d4434a284e136badb5b9a37f38bb}
+
+
+Definition at line 33 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$hash@{\$hash}}
+\index{\$hash@{\$hash}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$hash}{$hash}}]{\setlength{\rightskip}{0pt plus 5cm}\$hash = N\+U\+LL}\hypertarget{login_controller_8php_ac9fdf6f2c8fb45c1d3bb9a176802b2ad}{}\label{login_controller_8php_ac9fdf6f2c8fb45c1d3bb9a176802b2ad}
+
+
+Definition at line 15 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$level@{\$level}}
+\index{\$level@{\$level}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$level}{$level}}]{\setlength{\rightskip}{0pt plus 5cm}\$level = N\+U\+LL}\hypertarget{login_controller_8php_abd32cc82c6a3f79491987de36ad580ca}{}\label{login_controller_8php_abd32cc82c6a3f79491987de36ad580ca}
+
+
+Definition at line 16 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN@{\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN}}
+\index{\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN@{\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$\+M\+A\+X\+\_\+\+L\+O\+G\+IN}{$MAX_LOGIN}}]{\setlength{\rightskip}{0pt plus 5cm}\$M\+A\+X\+\_\+\+L\+O\+G\+IN = 5}\hypertarget{login_controller_8php_a29df9d9e6f96a4deadc10ccad7ca7b85}{}\label{login_controller_8php_a29df9d9e6f96a4deadc10ccad7ca7b85}
+
+
+Definition at line 5 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$\+M\+A\+X\+\_\+\+T\+I\+ME@{\$\+M\+A\+X\+\_\+\+T\+I\+ME}}
+\index{\$\+M\+A\+X\+\_\+\+T\+I\+ME@{\$\+M\+A\+X\+\_\+\+T\+I\+ME}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$\+M\+A\+X\+\_\+\+T\+I\+ME}{$MAX_TIME}}]{\setlength{\rightskip}{0pt plus 5cm}\$M\+A\+X\+\_\+\+T\+I\+ME = 1}\hypertarget{login_controller_8php_af965f1dde416adc9f91471416e63e3fc}{}\label{login_controller_8php_af965f1dde416adc9f91471416e63e3fc}
+
+
+Definition at line 6 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$my\+User\+Id@{\$my\+User\+Id}}
+\index{\$my\+User\+Id@{\$my\+User\+Id}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$my\+User\+Id}{$myUserId}}]{\setlength{\rightskip}{0pt plus 5cm}if (\$ret\+Count $>$=\$M\+A\+X\+\_\+\+L\+O\+G\+IN) if (!\$stmt=\$con-\/$>$prepare(\char`\"{}S\+E\+L\+E\+CT id\+Users, Username, Hash, level, Name, Role, Managment, `Write`, `Read` F\+R\+OM Users L\+E\+FT J\+O\+IN Location ON Users\+\_\+id\+Location = id\+Location L\+E\+FT J\+O\+IN `Group` ON Users\+\_\+id\+Group = id\+Group W\+H\+E\+RE Username = ? \char`\"{})) if (!\$stmt-\/$>$bind\+\_\+param(\char`\"{}s\char`\"{}, \$username)) if (!\$stmt-\/$>$execute()) if (!\$stmt-\/$>$bind\+\_\+result(\$userid, \$username, \$hash, \$level, \$location, \$role, \$m, \$w, \$r)) \$my\+User\+Id}\hypertarget{login_controller_8php_a67c41f5902e42a545f6ac644c135b3a7}{}\label{login_controller_8php_a67c41f5902e42a545f6ac644c135b3a7}
+
+
+Definition at line 67 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$password@{\$password}}
+\index{\$password@{\$password}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$password}{$password}}]{\setlength{\rightskip}{0pt plus 5cm}\$password = \$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}password\textquotesingle{}\mbox{]}}\hypertarget{login_controller_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}{}\label{login_controller_8php_a607686ef9f99ea7c42f4f3dd3dbb2b0d}
+
+
+Definition at line 14 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$past\+Date@{\$past\+Date}}
+\index{\$past\+Date@{\$past\+Date}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$past\+Date}{$pastDate}}]{\setlength{\rightskip}{0pt plus 5cm}\$past\+Date = date(\textquotesingle{}Y-\/m-\/d H\+:i\+:s\textquotesingle{}, strtotime(\$current\+Date) -\/ \$range)}\hypertarget{login_controller_8php_a14cff6ab1fd58b8e2d49e54bbcd093d0}{}\label{login_controller_8php_a14cff6ab1fd58b8e2d49e54bbcd093d0}
+
+
+Definition at line 35 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$range@{\$range}}
+\index{\$range@{\$range}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$range}{$range}}]{\setlength{\rightskip}{0pt plus 5cm}\$range = 60 $\ast$ 60 $\ast$ \$M\+A\+X\+\_\+\+T\+I\+ME}\hypertarget{login_controller_8php_ac2e4b5fa63099d7c943a803ae122dd2b}{}\label{login_controller_8php_ac2e4b5fa63099d7c943a803ae122dd2b}
+
+
+Definition at line 34 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$result@{\$result}}
+\index{\$result@{\$result}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$result}{$result}}]{\setlength{\rightskip}{0pt plus 5cm}\$result = 0}\hypertarget{login_controller_8php_a112ef069ddc0454086e3d1e6d8d55d07}{}\label{login_controller_8php_a112ef069ddc0454086e3d1e6d8d55d07}
+
+
+Definition at line 73 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$ret\+Count@{\$ret\+Count}}
+\index{\$ret\+Count@{\$ret\+Count}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$ret\+Count}{$retCount}}]{\setlength{\rightskip}{0pt plus 5cm}\$ret\+Count = \char`\"{}\char`\"{}}\hypertarget{login_controller_8php_abf6d841a145ada2e5b68168ac15e9d1b}{}\label{login_controller_8php_abf6d841a145ada2e5b68168ac15e9d1b}
+
+
+Definition at line 32 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$role@{\$role}}
+\index{\$role@{\$role}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$role}{$role}}]{\setlength{\rightskip}{0pt plus 5cm}\$role = N\+U\+LL}\hypertarget{login_controller_8php_a1ea903cca285c7c0b4c9203932100309}{}\label{login_controller_8php_a1ea903cca285c7c0b4c9203932100309}
+
+
+Definition at line 17 of file login\+Controller.\+php.
+
+\index{login\+Controller.\+php@{login\+Controller.\+php}!\$username@{\$username}}
+\index{\$username@{\$username}!login\+Controller.\+php@{login\+Controller.\+php}}
+\subsubsection[{\texorpdfstring{\$username}{$username}}]{\setlength{\rightskip}{0pt plus 5cm}\$username = \$\+\_\+\+P\+O\+ST\mbox{[}\textquotesingle{}username\textquotesingle{}\mbox{]}}\hypertarget{login_controller_8php_a0eb82aa5f81cf845de4b36cd653c42cf}{}\label{login_controller_8php_a0eb82aa5f81cf845de4b36cd653c42cf}
+
+
+Definition at line 13 of file login\+Controller.\+php.
+

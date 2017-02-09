@@ -1,0 +1,320 @@
+\hypertarget{entry_library_8php}{}\section{entry/entry\+Library.php File Reference}
+\label{entry_library_8php}\index{entry/entry\+Library.\+php@{entry/entry\+Library.\+php}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{entry_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}{get\+Locations} (\$con)
+\item 
+\hyperlink{entry_library_8php_a3144a911d05c41bd6eb0fc32c7ad02b9}{get\+Departments} (\$con)
+\item 
+\hyperlink{entry_library_8php_ac13edd684574861a5e26f7e0f84ef5a3}{offset\+Date} ()
+\item 
+\hyperlink{entry_library_8php_a44acbb1464d6087b72aa34070b0ca7a9}{form} (\$date, \$locations, \$departments)
+\item 
+\hyperlink{entry_library_8php_a628b0434043d9c6c694cb3f019dde312}{department\+To\+Id} (\$con, \$department)
+\item 
+\hyperlink{entry_library_8php_a82883067e7ce3af084a689781acadc10}{location\+To\+Id} (\$con, \$location)
+\item 
+\hyperlink{entry_library_8php_af8b4d6af446ee1a1da82accb07140c6f}{filter\+Int} (\$input)
+\item 
+\hyperlink{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{filter\+Float} (\$input)
+\item 
+\hyperlink{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}{filter\+String} (\$input)
+\item 
+\hyperlink{entry_library_8php_a2710911dba21b4ef81d746296ac33b1e}{filter\+Date} (\$date)
+\item 
+\hyperlink{entry_library_8php_aad16d1ba0e1533b08a8df404cfedc01e}{entry\+Review} ()
+\item 
+\hyperlink{entry_library_8php_a64878a2f3a5ccc6246763e8e0ea05504}{entry\+Clear} ()
+\item 
+\hyperlink{entry_library_8php_a8afbb7b50b6f7ecb19366b39b169e0f0}{insert\+Entry} (\$con)
+\item 
+\hyperlink{entry_library_8php_a4755dafd9341dedfdc581773a8c11bc2}{get\+User\+Id} (\$con)
+\item 
+\hyperlink{entry_library_8php_affaf766933efba19686b3b0c99137b21}{insert\+Confirmation} (\$con, \$entryid, \$userid, \$datetime, \$IP)
+\item 
+\hyperlink{entry_library_8php_a3c5d4e00ae5281937dbe290c697582ea}{insert\+Memo} (\$con, \$entryid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{entry\+Library.\+php@{entry\+Library.\+php}!department\+To\+Id@{department\+To\+Id}}
+\index{department\+To\+Id@{department\+To\+Id}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{department\+To\+Id(\$con, \$department)}{departmentToId($con, $department)}}]{\setlength{\rightskip}{0pt plus 5cm}department\+To\+Id (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$department}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a628b0434043d9c6c694cb3f019dde312}{}\label{entry_library_8php_a628b0434043d9c6c694cb3f019dde312}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$department} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!entry\+Clear@{entry\+Clear}}
+\index{entry\+Clear@{entry\+Clear}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{entry\+Clear()}{entryClear()}}]{\setlength{\rightskip}{0pt plus 5cm}entry\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a64878a2f3a5ccc6246763e8e0ea05504}{}\label{entry_library_8php_a64878a2f3a5ccc6246763e8e0ea05504}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 408 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!entry\+Review@{entry\+Review}}
+\index{entry\+Review@{entry\+Review}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{entry\+Review()}{entryReview()}}]{\setlength{\rightskip}{0pt plus 5cm}entry\+Review (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_aad16d1ba0e1533b08a8df404cfedc01e}{}\label{entry_library_8php_aad16d1ba0e1533b08a8df404cfedc01e}
+
+
+Definition at line 292 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!filter\+Date@{filter\+Date}}
+\index{filter\+Date@{filter\+Date}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{filter\+Date(\$date)}{filterDate($date)}}]{\setlength{\rightskip}{0pt plus 5cm}filter\+Date (
+\begin{DoxyParamCaption}
+\item[{}]{\$date}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a2710911dba21b4ef81d746296ac33b1e}{}\label{entry_library_8php_a2710911dba21b4ef81d746296ac33b1e}
+
+\begin{DoxyParams}{Parameters}
+{\em \$date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$parse 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!filter\+Float@{filter\+Float}}
+\index{filter\+Float@{filter\+Float}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{filter\+Float(\$input)}{filterFloat($input)}}]{\setlength{\rightskip}{0pt plus 5cm}filter\+Float (
+\begin{DoxyParamCaption}
+\item[{}]{\$input}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}{}\label{entry_library_8php_af071373943df9bc67a10f149e87cf4f6}
+
+
+Definition at line 272 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!filter\+Int@{filter\+Int}}
+\index{filter\+Int@{filter\+Int}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{filter\+Int(\$input)}{filterInt($input)}}]{\setlength{\rightskip}{0pt plus 5cm}filter\+Int (
+\begin{DoxyParamCaption}
+\item[{}]{\$input}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_af8b4d6af446ee1a1da82accb07140c6f}{}\label{entry_library_8php_af8b4d6af446ee1a1da82accb07140c6f}
+
+
+Definition at line 269 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!filter\+String@{filter\+String}}
+\index{filter\+String@{filter\+String}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{filter\+String(\$input)}{filterString($input)}}]{\setlength{\rightskip}{0pt plus 5cm}filter\+String (
+\begin{DoxyParamCaption}
+\item[{}]{\$input}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}{}\label{entry_library_8php_aa1a0f8c5ca5cd64b0ec9034a769d0a54}
+
+
+Definition at line 275 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!form@{form}}
+\index{form@{form}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{form(\$date, \$locations, \$departments)}{form($date, $locations, $departments)}}]{\setlength{\rightskip}{0pt plus 5cm}form (
+\begin{DoxyParamCaption}
+\item[{}]{\$date, }
+\item[{}]{\$locations, }
+\item[{}]{\$departments}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a44acbb1464d6087b72aa34070b0ca7a9}{}\label{entry_library_8php_a44acbb1464d6087b72aa34070b0ca7a9}
+
+\begin{DoxyParams}{Parameters}
+{\em \$locations} & \\
+\hline
+{\em \$departments} & \\
+\hline
+{\em \$date} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!get\+Departments@{get\+Departments}}
+\index{get\+Departments@{get\+Departments}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+Departments(\$con)}{getDepartments($con)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+Departments (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a3144a911d05c41bd6eb0fc32c7ad02b9}{}\label{entry_library_8php_a3144a911d05c41bd6eb0fc32c7ad02b9}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!get\+Locations@{get\+Locations}}
+\index{get\+Locations@{get\+Locations}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+Locations(\$con)}{getLocations($con)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+Locations (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}{}\label{entry_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 6 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!get\+User\+Id@{get\+User\+Id}}
+\index{get\+User\+Id@{get\+User\+Id}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+User\+Id(\$con)}{getUserId($con)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+User\+Id (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a4755dafd9341dedfdc581773a8c11bc2}{}\label{entry_library_8php_a4755dafd9341dedfdc581773a8c11bc2}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 521 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!insert\+Confirmation@{insert\+Confirmation}}
+\index{insert\+Confirmation@{insert\+Confirmation}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{insert\+Confirmation(\$con, \$entryid, \$userid, \$datetime, \$\+I\+P)}{insertConfirmation($con, $entryid, $userid, $datetime, $IP)}}]{\setlength{\rightskip}{0pt plus 5cm}insert\+Confirmation (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$entryid, }
+\item[{}]{\$userid, }
+\item[{}]{\$datetime, }
+\item[{}]{\$\+IP}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_affaf766933efba19686b3b0c99137b21}{}\label{entry_library_8php_affaf766933efba19686b3b0c99137b21}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$entryid} & \\
+\hline
+{\em \$userid} & \\
+\hline
+{\em \$datetime} & \\
+\hline
+{\em \$\+IP} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 562 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!insert\+Entry@{insert\+Entry}}
+\index{insert\+Entry@{insert\+Entry}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{insert\+Entry(\$con)}{insertEntry($con)}}]{\setlength{\rightskip}{0pt plus 5cm}insert\+Entry (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a8afbb7b50b6f7ecb19366b39b169e0f0}{}\label{entry_library_8php_a8afbb7b50b6f7ecb19366b39b169e0f0}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 424 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!insert\+Memo@{insert\+Memo}}
+\index{insert\+Memo@{insert\+Memo}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{insert\+Memo(\$con, \$entryid)}{insertMemo($con, $entryid)}}]{\setlength{\rightskip}{0pt plus 5cm}insert\+Memo (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$entryid}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a3c5d4e00ae5281937dbe290c697582ea}{}\label{entry_library_8php_a3c5d4e00ae5281937dbe290c697582ea}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$entryid} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 598 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!location\+To\+Id@{location\+To\+Id}}
+\index{location\+To\+Id@{location\+To\+Id}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{location\+To\+Id(\$con, \$location)}{locationToId($con, $location)}}]{\setlength{\rightskip}{0pt plus 5cm}location\+To\+Id (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$location}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_a82883067e7ce3af084a689781acadc10}{}\label{entry_library_8php_a82883067e7ce3af084a689781acadc10}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file entry\+Library.\+php.
+
+\index{entry\+Library.\+php@{entry\+Library.\+php}!offset\+Date@{offset\+Date}}
+\index{offset\+Date@{offset\+Date}!entry\+Library.\+php@{entry\+Library.\+php}}
+\subsubsection[{\texorpdfstring{offset\+Date()}{offsetDate()}}]{\setlength{\rightskip}{0pt plus 5cm}offset\+Date (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{entry_library_8php_ac13edd684574861a5e26f7e0f84ef5a3}{}\label{entry_library_8php_ac13edd684574861a5e26f7e0f84ef5a3}
+\begin{DoxyReturn}{Returns}
+false$\vert$int$\vert$string Set the day back by one day if a workday, if its monday, send it back two days 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file entry\+Library.\+php.
+

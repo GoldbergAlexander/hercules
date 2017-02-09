@@ -1,0 +1,685 @@
+\hypertarget{management_library_8php}{}\section{management/management\+Library.php File Reference}
+\label{management_library_8php}\index{management/management\+Library.\+php@{management/management\+Library.\+php}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{management_library_8php_afd0225001cc049f6f5701e479e1a4df4}{usage\+User} ()
+\item 
+\hyperlink{management_library_8php_a86b4cedfa00c35b188665e195644133c}{update\+Password} (\$con, \$hash, \$iduser)
+\item 
+\hyperlink{management_library_8php_a0e88fb337daef3ad8d29945f1ee22baf}{update\+User} (\$con, \$username, \$level, \$group, \$location, \$iduser)
+\item 
+\hyperlink{management_library_8php_affc38218672d80d3cbcda052315d0242}{remove\+User} (\$con, \$iduser)
+\item 
+\hyperlink{management_library_8php_a8da30afc30d3413869dde31dc2128205}{insert\+User} (\$con, \$username, \$level, \$hash, \$group, \$location)
+\item 
+\hyperlink{management_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}{get\+Locations} (\$con)
+\item 
+\hyperlink{management_library_8php_a79d3cddb0de99e66cd1c70721a390359}{get\+Groups} (\$con)
+\item 
+\hyperlink{management_library_8php_a615ceccc071300a7956ce80811393d4c}{show\+User} (\$id\+User, \$Username, \$Level, \$role, \$groups, \$location, \$locations)
+\item 
+\hyperlink{management_library_8php_ac8ca2b7c4eec58961a6f24cf0050905a}{user\+Labels} ()
+\item 
+\hyperlink{management_library_8php_ae3f0409601bd4654935f69bc3d7b5fe9}{get\+Users} (\$con, \$groups, \$locations)
+\item 
+\hyperlink{management_library_8php_a4e732f267ed8ed2b289d955d526f182a}{display\+Create\+User} (\$groups, \$locations)
+\item 
+\hyperlink{management_library_8php_a62a689da57ef7cf5d65aae05e1a01fd2}{user\+Management} (\$con)
+\item 
+\hyperlink{management_library_8php_a427ecd502df906d1bd92debd58818ea5}{location\+Usage} ()
+\item 
+\hyperlink{management_library_8php_a50791e2caa272f24d3e1b2fbe4d61569}{update\+Location} (\$con)
+\item 
+\hyperlink{management_library_8php_a6a015877e320f3d36c579a861f07aa47}{remove\+Location} (\$con)
+\item 
+\hyperlink{management_library_8php_a4a0449659d607c1eeedc42515b679e06}{create\+Location} (\$con)
+\item 
+\hyperlink{management_library_8php_a7f442256646f4d53a8c4fd6dd94edea0}{location\+Labels} ()
+\item 
+\hyperlink{management_library_8php_a56d2d4c28c2a5a6fffed1356b08cab26}{display\+Location} (\$id\+Location, \$Name, \$Address)
+\item 
+\hyperlink{management_library_8php_a59ed593c83786da02dbef2fef6757534}{display\+Create\+Location} ()
+\item 
+\hyperlink{management_library_8php_a96b5155ce51bf5818301bb9cb21eae8a}{location\+Management} (\$con)
+\item 
+\hyperlink{management_library_8php_a2cd213319a0fddf4c132ef0a065d90fb}{group\+Usage} ()
+\item 
+\hyperlink{management_library_8php_a8636b0a0fc43790af27a3eb14b557cf3}{update\+Group} (\$con)
+\item 
+\hyperlink{management_library_8php_a292c8baa1f3497935a0baa149bad60b9}{remove\+Group} (\$con)
+\item 
+\hyperlink{management_library_8php_a370e0d52cf1d46a492a1b4f9e22d2489}{create\+Group} (\$con)
+\item 
+\hyperlink{management_library_8php_a277865a80915b04ce5480679ddd453f4}{display\+Group} (\$id\+Group, \$role, \$managment, \$read, \$write)
+\item 
+\hyperlink{management_library_8php_a4c21018719f02b20dcbf3dde887b9aa0}{group\+Labels} ()
+\item 
+\hyperlink{management_library_8php_a3e5a997ac541ca9133453b0ad9799978}{display\+Create\+Group} ()
+\item 
+\hyperlink{management_library_8php_a9cfc4c4d18e3f6771e5cc6b08922d185}{group\+Management} (\$con)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{management\+Library.\+php@{management\+Library.\+php}!create\+Group@{create\+Group}}
+\index{create\+Group@{create\+Group}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{create\+Group(\$con)}{createGroup($con)}}]{\setlength{\rightskip}{0pt plus 5cm}create\+Group (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a370e0d52cf1d46a492a1b4f9e22d2489}{}\label{management_library_8php_a370e0d52cf1d46a492a1b4f9e22d2489}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 666 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!create\+Location@{create\+Location}}
+\index{create\+Location@{create\+Location}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{create\+Location(\$con)}{createLocation($con)}}]{\setlength{\rightskip}{0pt plus 5cm}create\+Location (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a4a0449659d607c1eeedc42515b679e06}{}\label{management_library_8php_a4a0449659d607c1eeedc42515b679e06}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 450 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!display\+Create\+Group@{display\+Create\+Group}}
+\index{display\+Create\+Group@{display\+Create\+Group}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{display\+Create\+Group()}{displayCreateGroup()}}]{\setlength{\rightskip}{0pt plus 5cm}display\+Create\+Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a3e5a997ac541ca9133453b0ad9799978}{}\label{management_library_8php_a3e5a997ac541ca9133453b0ad9799978}
+
+
+Definition at line 765 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 0
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!display\+Create\+Location@{display\+Create\+Location}}
+\index{display\+Create\+Location@{display\+Create\+Location}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{display\+Create\+Location()}{displayCreateLocation()}}]{\setlength{\rightskip}{0pt plus 5cm}display\+Create\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a59ed593c83786da02dbef2fef6757534}{}\label{management_library_8php_a59ed593c83786da02dbef2fef6757534}
+
+
+Definition at line 513 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!display\+Create\+User@{display\+Create\+User}}
+\index{display\+Create\+User@{display\+Create\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{display\+Create\+User(\$groups, \$locations)}{displayCreateUser($groups, $locations)}}]{\setlength{\rightskip}{0pt plus 5cm}display\+Create\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$groups, }
+\item[{}]{\$locations}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a4e732f267ed8ed2b289d955d526f182a}{}\label{management_library_8php_a4e732f267ed8ed2b289d955d526f182a}
+
+
+Definition at line 314 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!display\+Group@{display\+Group}}
+\index{display\+Group@{display\+Group}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{display\+Group(\$id\+Group, \$role, \$managment, \$read, \$write)}{displayGroup($idGroup, $role, $managment, $read, $write)}}]{\setlength{\rightskip}{0pt plus 5cm}display\+Group (
+\begin{DoxyParamCaption}
+\item[{}]{\$id\+Group, }
+\item[{}]{\$role, }
+\item[{}]{\$managment, }
+\item[{}]{\$read, }
+\item[{}]{\$write}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a277865a80915b04ce5480679ddd453f4}{}\label{management_library_8php_a277865a80915b04ce5480679ddd453f4}
+Group Management Functions 
+\begin{DoxyParams}{Parameters}
+{\em \$id\+Group} & \\
+\hline
+{\em \$role} & \\
+\hline
+{\em \$managment} & \\
+\hline
+{\em \$read} & \\
+\hline
+{\em \$write} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 724 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!display\+Location@{display\+Location}}
+\index{display\+Location@{display\+Location}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{display\+Location(\$id\+Location, \$\+Name, \$\+Address)}{displayLocation($idLocation, $Name, $Address)}}]{\setlength{\rightskip}{0pt plus 5cm}display\+Location (
+\begin{DoxyParamCaption}
+\item[{}]{\$id\+Location, }
+\item[{}]{\$\+Name, }
+\item[{}]{\$\+Address}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a56d2d4c28c2a5a6fffed1356b08cab26}{}\label{management_library_8php_a56d2d4c28c2a5a6fffed1356b08cab26}
+
+\begin{DoxyParams}{Parameters}
+{\em \$id\+Location} & \\
+\hline
+{\em \$\+Name} & \\
+\hline
+{\em \$\+Address} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 498 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!get\+Groups@{get\+Groups}}
+\index{get\+Groups@{get\+Groups}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+Groups(\$con)}{getGroups($con)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+Groups (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a79d3cddb0de99e66cd1c70721a390359}{}\label{management_library_8php_a79d3cddb0de99e66cd1c70721a390359}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!get\+Locations@{get\+Locations}}
+\index{get\+Locations@{get\+Locations}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+Locations(\$con)}{getLocations($con)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+Locations (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}{}\label{management_library_8php_a80f0f920d3c753bb4d3ce744c602f22c}
+User Management Functions 
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 170 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!get\+Users@{get\+Users}}
+\index{get\+Users@{get\+Users}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{get\+Users(\$con, \$groups, \$locations)}{getUsers($con, $groups, $locations)}}]{\setlength{\rightskip}{0pt plus 5cm}get\+Users (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$groups, }
+\item[{}]{\$locations}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_ae3f0409601bd4654935f69bc3d7b5fe9}{}\label{management_library_8php_ae3f0409601bd4654935f69bc3d7b5fe9}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$groups} & \\
+\hline
+{\em \$locations} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 276 of file management\+Library.\+php.
+
+
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!group\+Labels@{group\+Labels}}
+\index{group\+Labels@{group\+Labels}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{group\+Labels()}{groupLabels()}}]{\setlength{\rightskip}{0pt plus 5cm}group\+Labels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a4c21018719f02b20dcbf3dde887b9aa0}{}\label{management_library_8php_a4c21018719f02b20dcbf3dde887b9aa0}
+
+
+Definition at line 753 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 9
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!group\+Management@{group\+Management}}
+\index{group\+Management@{group\+Management}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{group\+Management(\$con)}{groupManagement($con)}}]{\setlength{\rightskip}{0pt plus 5cm}group\+Management (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a9cfc4c4d18e3f6771e5cc6b08922d185}{}\label{management_library_8php_a9cfc4c4d18e3f6771e5cc6b08922d185}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 783 of file management\+Library.\+php.
+
+
+
+Here is the call graph for this function\+:
+% FIG 10
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!group\+Usage@{group\+Usage}}
+\index{group\+Usage@{group\+Usage}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{group\+Usage()}{groupUsage()}}]{\setlength{\rightskip}{0pt plus 5cm}group\+Usage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a2cd213319a0fddf4c132ef0a065d90fb}{}\label{management_library_8php_a2cd213319a0fddf4c132ef0a065d90fb}
+Group Controller Functions 
+
+Definition at line 567 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!insert\+User@{insert\+User}}
+\index{insert\+User@{insert\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{insert\+User(\$con, \$username, \$level, \$hash, \$group, \$location)}{insertUser($con, $username, $level, $hash, $group, $location)}}]{\setlength{\rightskip}{0pt plus 5cm}insert\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$username, }
+\item[{}]{\$level, }
+\item[{}]{\$hash, }
+\item[{}]{\$group, }
+\item[{}]{\$location}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a8da30afc30d3413869dde31dc2128205}{}\label{management_library_8php_a8da30afc30d3413869dde31dc2128205}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$username} & \\
+\hline
+{\em \$level} & \\
+\hline
+{\em \$hash} & \\
+\hline
+{\em \$group} & \\
+\hline
+{\em \$location} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!location\+Labels@{location\+Labels}}
+\index{location\+Labels@{location\+Labels}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{location\+Labels()}{locationLabels()}}]{\setlength{\rightskip}{0pt plus 5cm}location\+Labels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a7f442256646f4d53a8c4fd6dd94edea0}{}\label{management_library_8php_a7f442256646f4d53a8c4fd6dd94edea0}
+Location Management Functions 
+
+Definition at line 483 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 11
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!location\+Management@{location\+Management}}
+\index{location\+Management@{location\+Management}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{location\+Management(\$con)}{locationManagement($con)}}]{\setlength{\rightskip}{0pt plus 5cm}location\+Management (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a96b5155ce51bf5818301bb9cb21eae8a}{}\label{management_library_8php_a96b5155ce51bf5818301bb9cb21eae8a}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$id\+Location} & \\
+\hline
+{\em \$\+Name} & \\
+\hline
+{\em \$\+Address} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 532 of file management\+Library.\+php.
+
+
+
+Here is the call graph for this function\+:
+% FIG 12
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!location\+Usage@{location\+Usage}}
+\index{location\+Usage@{location\+Usage}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{location\+Usage()}{locationUsage()}}]{\setlength{\rightskip}{0pt plus 5cm}location\+Usage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a427ecd502df906d1bd92debd58818ea5}{}\label{management_library_8php_a427ecd502df906d1bd92debd58818ea5}
+Location Controller Functions 
+
+Definition at line 363 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!remove\+Group@{remove\+Group}}
+\index{remove\+Group@{remove\+Group}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{remove\+Group(\$con)}{removeGroup($con)}}]{\setlength{\rightskip}{0pt plus 5cm}remove\+Group (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a292c8baa1f3497935a0baa149bad60b9}{}\label{management_library_8php_a292c8baa1f3497935a0baa149bad60b9}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 634 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!remove\+Location@{remove\+Location}}
+\index{remove\+Location@{remove\+Location}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{remove\+Location(\$con)}{removeLocation($con)}}]{\setlength{\rightskip}{0pt plus 5cm}remove\+Location (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a6a015877e320f3d36c579a861f07aa47}{}\label{management_library_8php_a6a015877e320f3d36c579a861f07aa47}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed 
+\end{DoxyReturn}
+
+
+Definition at line 421 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!remove\+User@{remove\+User}}
+\index{remove\+User@{remove\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{remove\+User(\$con, \$iduser)}{removeUser($con, $iduser)}}]{\setlength{\rightskip}{0pt plus 5cm}remove\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$iduser}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_affc38218672d80d3cbcda052315d0242}{}\label{management_library_8php_affc38218672d80d3cbcda052315d0242}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$iduser} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!show\+User@{show\+User}}
+\index{show\+User@{show\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{show\+User(\$id\+User, \$\+Username, \$\+Level, \$role, \$groups, \$location, \$locations)}{showUser($idUser, $Username, $Level, $role, $groups, $location, $locations)}}]{\setlength{\rightskip}{0pt plus 5cm}show\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$id\+User, }
+\item[{}]{\$\+Username, }
+\item[{}]{\$\+Level, }
+\item[{}]{\$role, }
+\item[{}]{\$groups, }
+\item[{}]{\$location, }
+\item[{}]{\$locations}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a615ceccc071300a7956ce80811393d4c}{}\label{management_library_8php_a615ceccc071300a7956ce80811393d4c}
+
+\begin{DoxyParams}{Parameters}
+{\em \$id\+User} & \\
+\hline
+{\em \$\+Username} & \\
+\hline
+{\em \$\+Level} & \\
+\hline
+{\em \$role} & \\
+\hline
+{\em \$groups} & \\
+\hline
+{\em \$location} & \\
+\hline
+{\em \$locations} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$string 
+\end{DoxyReturn}
+
+
+Definition at line 229 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 13
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!update\+Group@{update\+Group}}
+\index{update\+Group@{update\+Group}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{update\+Group(\$con)}{updateGroup($con)}}]{\setlength{\rightskip}{0pt plus 5cm}update\+Group (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a8636b0a0fc43790af27a3eb14b557cf3}{}\label{management_library_8php_a8636b0a0fc43790af27a3eb14b557cf3}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 585 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!update\+Location@{update\+Location}}
+\index{update\+Location@{update\+Location}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{update\+Location(\$con)}{updateLocation($con)}}]{\setlength{\rightskip}{0pt plus 5cm}update\+Location (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a50791e2caa272f24d3e1b2fbe4d61569}{}\label{management_library_8php_a50791e2caa272f24d3e1b2fbe4d61569}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+
+
+Definition at line 388 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!update\+Password@{update\+Password}}
+\index{update\+Password@{update\+Password}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{update\+Password(\$con, \$hash, \$iduser)}{updatePassword($con, $hash, $iduser)}}]{\setlength{\rightskip}{0pt plus 5cm}update\+Password (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$hash, }
+\item[{}]{\$iduser}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a86b4cedfa00c35b188665e195644133c}{}\label{management_library_8php_a86b4cedfa00c35b188665e195644133c}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$hash} & \\
+\hline
+{\em \$iduser} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!update\+User@{update\+User}}
+\index{update\+User@{update\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{update\+User(\$con, \$username, \$level, \$group, \$location, \$iduser)}{updateUser($con, $username, $level, $group, $location, $iduser)}}]{\setlength{\rightskip}{0pt plus 5cm}update\+User (
+\begin{DoxyParamCaption}
+\item[{}]{\$con, }
+\item[{}]{\$username, }
+\item[{}]{\$level, }
+\item[{}]{\$group, }
+\item[{}]{\$location, }
+\item[{}]{\$iduser}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a0e88fb337daef3ad8d29945f1ee22baf}{}\label{management_library_8php_a0e88fb337daef3ad8d29945f1ee22baf}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+{\em \$username} & \\
+\hline
+{\em \$level} & \\
+\hline
+{\em \$group} & \\
+\hline
+{\em \$location} & \\
+\hline
+{\em \$iduser} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!usage\+User@{usage\+User}}
+\index{usage\+User@{usage\+User}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{usage\+User()}{usageUser()}}]{\setlength{\rightskip}{0pt plus 5cm}usage\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_afd0225001cc049f6f5701e479e1a4df4}{}\label{management_library_8php_afd0225001cc049f6f5701e479e1a4df4}
+User Control Functions \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 9 of file management\+Library.\+php.
+
+\index{management\+Library.\+php@{management\+Library.\+php}!user\+Labels@{user\+Labels}}
+\index{user\+Labels@{user\+Labels}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{user\+Labels()}{userLabels()}}]{\setlength{\rightskip}{0pt plus 5cm}user\+Labels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_ac8ca2b7c4eec58961a6f24cf0050905a}{}\label{management_library_8php_ac8ca2b7c4eec58961a6f24cf0050905a}
+
+
+Definition at line 259 of file management\+Library.\+php.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 14
+
+
+\index{management\+Library.\+php@{management\+Library.\+php}!user\+Management@{user\+Management}}
+\index{user\+Management@{user\+Management}!management\+Library.\+php@{management\+Library.\+php}}
+\subsubsection[{\texorpdfstring{user\+Management(\$con)}{userManagement($con)}}]{\setlength{\rightskip}{0pt plus 5cm}user\+Management (
+\begin{DoxyParamCaption}
+\item[{}]{\$con}
+\end{DoxyParamCaption}
+)}\hypertarget{management_library_8php_a62a689da57ef7cf5d65aae05e1a01fd2}{}\label{management_library_8php_a62a689da57ef7cf5d65aae05e1a01fd2}
+
+\begin{DoxyParams}{Parameters}
+{\em \$con} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 346 of file management\+Library.\+php.
+
+
+
+Here is the call graph for this function\+:
+% FIG 15
+
+

@@ -1,0 +1,19 @@
+digraph "userManagement"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="userManagement",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="getLocations",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#a80f0f920d3c753bb4d3ce744c602f22c"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="getGroups",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#a79d3cddb0de99e66cd1c70721a390359"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="getUsers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#ae3f0409601bd4654935f69bc3d7b5fe9"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="userLabels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#ac8ca2b7c4eec58961a6f24cf0050905a"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="showUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#a615ceccc071300a7956ce80811393d4c"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="displayCreateUser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$management_library_8php.html#a4e732f267ed8ed2b289d955d526f182a"];
+}
