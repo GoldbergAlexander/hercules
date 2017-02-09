@@ -1,4 +1,5 @@
 <?php
+require_once '/var/www/html/database/dbconnect.php';
 function accountInfo()
 {
     $string = "";
@@ -85,12 +86,10 @@ function verifyPassword($con)
         echo "Bind Result Failed: (" . $stmt->errno . ") " . $stmt->error;
     }
 //Should be a single line
+    $return = false;
     while ($stmt->fetch()) {
         if (password_verify($oldpass, $hash)) {
             $return = true;
-        } else {
-            $return = false;
-
         }
     }
     $stmt->close();
@@ -100,7 +99,7 @@ function verifyPassword($con)
 function updatePassword($con)
 {
     $return = false;
-    if (!isset($_POST['pass']) || !isset($_POST['passconfirm'])) {
+    if (!isset($_POST['pass'],$_POST['passconfirm'])) {
         echo "Password entries must match";
         return $return;
     }
