@@ -53,7 +53,7 @@ function offsetDate()
  * @param $departments
  * @param $date
  */
-function form($date, $locations, $departments)
+function form($date, $locations)
 {
     $string = "";
     if (isset($_SESSION['submitdata'])) {
@@ -81,18 +81,6 @@ function form($date, $locations, $departments)
         $string .= "</div>";
     }
 
-
-    if (!empty($departments)) {
-        $string .= "<div class='entryforminput'>";
-        $string .= "<div>Department</div>";
-        $string .= "<select name='department'>";
-        $string .= "<option value='<empty>'><empty></option>";
-        while ($row = $departments->fetch_assoc()) {
-            $string .= "<option value'" . $row['Name'] . "'>" . $row['Name'] . "</option>";
-        }
-        $string .= "</select>";
-        $string .= "</div>";
-    }
 
 
     $string .= "<div class='entryforminput'>";
@@ -307,12 +295,6 @@ function entryReview()
 
 
     $string .= "<div class='reviewoutput'>";
-    $string .= "<div>Department</div>";
-    $string .= "<div class='item'>" . $array['department'] . "</div>";
-    $string .= "</div>";
-
-
-    $string .= "<div class='reviewoutput'>";
     $string .= "<div>Date</div>";
     $string .= "<div class='item'>" . $array['date'] . "</div>";
     $string .= "</div>";
@@ -432,11 +414,6 @@ function insertEntry($con)
 
     $location = $array['location'];
     $locationid = $array['locationid'];
-    /*
-     * Not using Departments
-    $department 	= $array['department'];
-    $departmentid	= $array['departmentid'];
-    */
     $date = $array['date'];
     $transcount = $array['transcount'];
     $cashcount = $array['cashcount'];

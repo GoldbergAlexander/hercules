@@ -25,8 +25,7 @@ function dataFetch($detail, $startDate, $endDate, $location, $data){
         //Dailies On Hold
         //Prepare
         if(!$stmt = $con->prepare("
-			SELECT Name,`Date`, SUM(CashCount + CheckCount + CardUnit)
-			AS Revenue
+			SELECT Name,`Date`, Revenue
 			FROM RevenueDaily
 			INNER JOIN Location
 			ON RevDaily_idLocation = idLocation

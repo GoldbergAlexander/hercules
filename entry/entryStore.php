@@ -5,7 +5,6 @@ require_once '/var/www/html/security/security.php';
 secure();
 
 $location = filterString($_POST['location']);
-$department = filterString($_POST['department']);
 $date = filterDate($_POST['date']);
 $transcount = filterInt($_POST['transcount']);
 $cashcount = filterFloat($_POST['cashcount']);
@@ -22,13 +21,10 @@ $memo = filterString($_POST['memo']);
 
 
 $locationid = locationToId($con, $location);
-$departmentid = departmentToId($con, $department);
 
 $submitarray = array(
 	"location" => $location,
-	"department" => $department,
 	"locationid" => $locationid,
-	"departmentid" => $departmentid,
 	"date" => $date,
 	"transcount" => $transcount,
 	"cashcount" => $cashcount,
