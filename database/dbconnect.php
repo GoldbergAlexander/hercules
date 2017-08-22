@@ -1,7 +1,7 @@
 <?php
 function dbconnect()
 {
-    $server = "172.16.127.138";
+    $server = "192.168.37.129";
     $user = "root";
     $pass = "root";
     $db = "Revenue";

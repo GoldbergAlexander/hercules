@@ -113,20 +113,20 @@ function form($date, $locations)
     $string .= "<input type='text' name='checkcount' value='" . $array['checkcount'] . "'>";
     $string .= "</div>";
 
-    if (!isset($array['payout'])) {
-        $array['payout'] = 0.00;
-    }
-    $string .= "<div class='entryforminput'>";
-    $string .= "<div>Payout</div>";
-    $string .= "<input type='text' name='payout'value='" . $array['payout'] . "'>";
-    $string .= "</div>";
-
     if (!isset($array['cardunit'])) {
         $array['cardunit'] = 0.00;
     }
     $string .= "<div class='entryforminput'>";
     $string .= "<div>Card Unit</div>";
     $string .= "<input type='text' name='cardunit'value='" . $array['cardunit'] . "'>";
+    $string .= "</div>";
+
+    if (!isset($array['payout'])) {
+        $array['payout'] = 0.00;
+    }
+    $string .= "<div class='entryforminput'>";
+    $string .= "<div>Payout</div>";
+    $string .= "<input type='text' name='payout'value='" . $array['payout'] . "'>";
     $string .= "</div>";
 
     if (!isset($array['cashtape'])) {
@@ -159,6 +159,14 @@ function form($date, $locations)
     $string .= "<div class='entryforminput'>";
     $string .= "<div>Tax Tape</div>";
     $string .= "<input type='text' name='taxtape'value='" . $array['taxtape'] . "'>";
+    $string .= "</div>";
+
+    if (!isset($array['vehiclesale'])) {
+        $array['vehiclesale'] = 0.00;
+    }
+    $string .= "<div class='entryforminput'>";
+    $string .= "<div>Vehicle Sale</div>";
+    $string .= "<input type='text' name='vehiclesale' value='" . $array['vehiclesale'] . "'>";
     $string .= "</div>";
 
     if (!isset($array['salesvoid'])) {
@@ -316,13 +324,13 @@ function entryReview()
     $string .= "</div>";
 
     $string .= "<div class='reviewoutput'>";
-    $string .= "<div>Payout</div>";
-    $string .= "<div class='item'>" . $array['payout'] . "</div>";
+    $string .= "<div>Card Unit</div>";
+    $string .= "<div class='item'>" . $array['cardunit'] . "</div>";
     $string .= "</div>";
 
     $string .= "<div class='reviewoutput'>";
-    $string .= "<div>Card Unit</div>";
-    $string .= "<div class='item'>" . $array['cardunit'] . "</div>";
+    $string .= "<div>Payout</div>";
+    $string .= "<div class='item'>" . $array['payout'] . "</div>";
     $string .= "</div>";
 
     $string .= "<div class='reviewoutput'>";
@@ -346,6 +354,11 @@ function entryReview()
     $string .= "</div>";
 
     $string .= "<div class='reviewoutput'>";
+    $string .= "<div>Vehicle Sale</div>";
+    $string .= "<div class='item'>" . $array['vehiclesale'] . "</div>";
+    $string .= "</div>";
+
+    $string .= "<div class='reviewoutput'>";
     $string .= "<div>Sales Void</div>";
     $string .= "<div class='item'>" . $array['salesvoid'] . "</div>";
     $string .= "</div>";
@@ -356,9 +369,14 @@ function entryReview()
     $string .= "</div>";
 
     if ($array['memo'] != "") {
+        if(strlen($array['memo'])>10){
+            $memo = substr($array['memo'],0,10) . '...';
+        }else{
+            $memo = $array['memo'];
+        }
         $string .= "<div class='reviewoutput'>";
         $string .= "<div>Memo</div>";
-        $string .= "<div class='item'>" . $array['memo'] . "</div>";
+        $string .= "<div class='item'>" . $memo . "</div>";
         $string .= "</div>";
     }
 
@@ -418,8 +436,9 @@ function insertEntry($con)
     $transcount = $array['transcount'];
     $cashcount = $array['cashcount'];
     $checkcount = $array['checkcount'];
-    $payout = $array['payout'];
     $cardunit = $array['cardunit'];
+    $payout = $array['payout'];
+    $vehiclesale = $array['vehiclesale'];
     $cashtape = $array['cashtape'];
     $checktape = $array['checktape'];
     $cardtape = $array['cardtape'];
@@ -442,6 +461,7 @@ function insertEntry($con)
                                           CheckTape,
                                           CardTape,
                                           TaxTape,
+                                          VehicleSale,
                                           SalesVoid,
                                           TaxVoid
                                           ) VALUES (
@@ -454,7 +474,8 @@ function insertEntry($con)
                                           ?, 
                                           ?, 
                                           ?, 
-                                          ?, 
+                                          ?,
+                                          ?,
                                           ?, 
                                           ?, 
                                           ?)")
@@ -464,7 +485,7 @@ function insertEntry($con)
 
 //Add ablity for array handling
 //Bind
-    if (!$stmt->bind_param("issssssssssss",
+    if (!$stmt->bind_param("isssssssssssss",
         $locationid,
         $date,
         $transcount,
@@ -476,6 +497,7 @@ function insertEntry($con)
         $checktape,
         $cardtape,
         $taxtape,
+        $vehiclesale,
         $salesvoid,
         $taxvoid)
     ) {

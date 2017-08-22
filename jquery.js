@@ -24,10 +24,20 @@ $(document).on("click","#register",function(){
 	$("#main").load("register.php");
 });
 
+/* management sub tabs */
 $(document).on("click","#managment",function(){
 	$("#main").load("/management/managment.php");
-});	
-	
+});
+$(document).on("click","#users",function(){
+    $("#main").load("/management/user/userManagment.php");
+});
+$(document).on("click","#locations",function(){
+    $("#main").load("/management/location/locationManagment.php");
+});
+$(document).on("click","#groups",function(){
+    $("#main").load("/managment/group/groupManagment.php");
+});
+
 $(document).on("click","#logout",function(){
 	$.post("/login/logout.php",function(data){
 		$("#nav").load("nav.php");
@@ -191,5 +201,16 @@ $(document).on("submit","#groupform",function(e) {
 	e.preventDefault();
 });
 
+/** Display Code **/
 
-
+$(document).on("submit","#data_selection_form",function(e) {
+    var url = "/display/displayController.php";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#data_selection_form").serialize(),
+    }).done(function(){
+        $("#main").load("/display/display.php");
+    });
+    e.preventDefault();
+});

@@ -67,7 +67,7 @@ function verifyPassword($con)
     }
     $oldpass = $_POST['oldpass'];
     if (strlen($oldpass) <= 0) {
-        die("Old Passoword Required");
+        die("Old Password Required");
     }
 
     if (!$stmt = $con->prepare("SELECT Hash FROM Users WHERE Username = ?")) {

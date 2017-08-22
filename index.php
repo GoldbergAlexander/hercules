@@ -5,6 +5,7 @@ echo "<!DOCTYPE html>";
 
 echo "<html>";
 echo "<link rel='stylesheet' href='css.css'>";
+echo "<link rel='stylesheet' href='/token-field/stylesheets/token-field.css' type='text/css' media='screen'>";
 echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>";
 echo "<script type='text/javascript' src='/fc/js/fusioncharts.js'></script>";
 echo "<script type='text/javascript' src='/fc/js/themes/fusioncharts.theme.ocean.js'></script>";

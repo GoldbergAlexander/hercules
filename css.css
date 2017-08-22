@@ -27,6 +27,21 @@ div {
 	font-weight:bold;
 	
 }
+.dropdown{
+	display: none;
+	position: absolute;
+	width: 120px;
+	padding-top: 5px;
+}
+.dropdown div{
+	margin: 2px;
+	padding: 3px;
+	font-size:14pt;
+	font-weight:bold;
+}
+.navbutton:hover .dropdown{
+	display: block;
+}
 .main{
 	min-height:700px;
 	overflow:auto;
@@ -135,6 +150,7 @@ div {
 }
 .reviewoutput>.item{
 	width:100px;
+	max-width: 100px;
 	text-align:right;
 	padding:5px;
 	margin:2.5px;
@@ -183,7 +199,7 @@ div {
 	margin:10px;
 }
 .accountinfo>div{
-	width:150px;
+	width:170px;
 	display:inline-block;
 }
 
@@ -360,3 +376,69 @@ div {
 .date{
 	width:115px;
 }
+
+.bad {
+	color: darkred;
+}
+
+.good {
+	color: darkgreen;
+}
+
+/** Display **/
+.display_section {
+	width: 33%;
+	float: left;
+
+}
+.display_sub_section {
+	height: 150px;
+}
+
+.display_header{
+	font-size: 14pt;
+	font-weight: bold;
+}
+.display_sub_header{
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+.key {
+	display: inline-block;
+	margin-bottom:-200px;
+	margin-top:-200px;
+
+	width:100px;
+}
+
+/* Display Input */
+.display_input{
+	height:45px;
+}
+
+.data_selection{
+	margin: 3px;
+}
+.data_selection>input{
+	display:block;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	border:0.5px solid grey;
+	border-radius:2px;
+}
+
+.data_selection>select{
+	display:block;
+	float: left;
+	height: 30px;
+	margin: 5px;
+	border:0.5px solid grey;
+	border-radius:2px;
+}
+
+.data_selection_submit{
+	padding: 7px !important;
+}
+
