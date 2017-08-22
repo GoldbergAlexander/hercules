@@ -1,8 +1,42 @@
 <?php
 require_once '/var/www/html/database/dbconnect.php';
 require_once '/var/www/html/security/security.php';
+require_once '/var/www/html/display/displayLibrary.php';
 secure();
 
+echo input();
+
+if(!isset($_SESSION['display'])){
+
+}else {
+    $date = $_SESSION['display']['date'];
+    $location = $_SESSION['display']['location'];
+    $user = $_SESSION['username'];
+
+
+    echo "<div class='display_generation_details'>";
+    echo "<span class='display_header'>Report Generation Details</span>";
+    echo "</br>";
+    echo "Location: " . $location;
+    echo "</br>";
+    echo "For date: " . $date;
+    echo "</br>";
+    echo "Accessed by: " . $user;
+    echo "</br>";
+    echo "Accessed on: " . date("Y-m-d H:i:s");
+    echo "</br>";
+    echo "</div>"; //display_generation_details
+
+    echo @explainDay_One($date, $location);
+}
+
+
+
+
+
+
+
+/* Chart display -- Saved for later
 echo "<div class='chart' id='chart'>";
 echo "<div class='toolbar' id='toolbar'>";
 
@@ -58,7 +92,34 @@ echo "</div>"; //enddate
 echo "</form>"; //form
 echo "</div>"; //toolbar
 
-include "/var/www/html/display/data.php";
+
+//From Data.php
+if(isset($_POST['startdate']) && isset($_POST['enddate']) && isset($_POST['detail'])){
+
+    $start = filter_var($_POST['startdate'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $end = filter_var($_POST['enddate'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $detail = filter_var($_POST['detail'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $location = filter_var($_POST['location'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $type = filter_var($_POST['type'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+    //Here is the user asked for compared locations we will add multiple data sets
+    if($location == "Combined"){
+        $location = NULL;
+        $data = dataFetch($detail,$start,$end,$location,NULL);
+        dataDisplay($type,$data);
+    }else if($location == "Compared"){
+        echo "This Feature is Not Yet Supported";
+    }else{
+        $data = dataFetch($detail,$start,$end,$location,NULL);
+        dataDisplay($type,$data);
+    }
+
+}else{
+    $data = dataFetch("month","1900-01-01","2100-01-01","West Side",NULL);
+    dataDisplay("column2d",$data);
+}
 
 echo "</div>"; //chart
+
+*/ // Chart Display -- Saved for later
 
